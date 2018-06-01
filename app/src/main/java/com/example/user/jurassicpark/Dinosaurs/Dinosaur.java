@@ -1,4 +1,4 @@
-package com.example.user.jurassicpark;
+package com.example.user.jurassicpark.Dinosaurs;
 
 public class Dinosaur {
     private FeedType feedType;

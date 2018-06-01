@@ -1,5 +1,8 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
+import com.example.user.jurassicpark.Dinosaurs.FeedType;
+
 import org.junit.Before;
 import org.junit.Test;
 
