@@ -1,11 +1,7 @@
 package com.example.user.jurassicpark;
 
-import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
-import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.Gallimimus;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
-import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
