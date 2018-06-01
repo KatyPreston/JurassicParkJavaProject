@@ -24,7 +24,7 @@ public class PteranodonTest {
 
     @Test
     public void canGeType(){
-        assertEquals("Iguanodon", pteranodon.getType());
+        assertEquals("Pteranodon", pteranodon.getType());
     }
 
     @Test
