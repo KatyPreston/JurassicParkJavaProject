@@ -22,4 +22,8 @@ public class Dinosaur {
     public String getName(){
         return this.name;
     }
+
+    public String eat(){
+        return "Mmmm";
+    }
 }

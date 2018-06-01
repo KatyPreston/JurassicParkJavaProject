@@ -27,4 +27,9 @@ public class DinosaurTest {
     public void canGetName(){
         assertEquals("Elvis", dinosaur.getName());
     }
+
+    @Test
+    public void canEat(){
+        assertEquals("Mmmm", dinosaur.eat());
+    }
 }
