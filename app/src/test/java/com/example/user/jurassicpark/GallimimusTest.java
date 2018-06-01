@@ -2,7 +2,6 @@ package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Gallimimus;
-import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 
 import org.junit.Before;
 import org.junit.Test;

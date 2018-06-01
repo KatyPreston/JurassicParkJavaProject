@@ -4,7 +4,6 @@ import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.TRexPaddock;
-import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
 import org.junit.Before;
 import org.junit.Test;

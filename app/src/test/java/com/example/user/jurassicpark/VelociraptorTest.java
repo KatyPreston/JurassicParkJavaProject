@@ -1,9 +1,6 @@
 package com.example.user.jurassicpark;
 
-import android.view.ViewGroup;
-
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
 
 import org.junit.Before;

@@ -1,6 +1,5 @@
 package com.example.user.jurassicpark;
 
-import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 

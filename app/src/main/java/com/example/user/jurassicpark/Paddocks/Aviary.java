@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark.Paddocks;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
-import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
 
 import java.util.ArrayList;
 
