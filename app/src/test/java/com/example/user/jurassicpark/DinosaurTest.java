@@ -17,4 +17,14 @@ public class DinosaurTest {
     public void canGetFeedType(){
         assertEquals(FeedType.HERBIVORE, dinosaur.getFeedType());
     }
+
+    @Test
+    public void canGeType(){
+        assertEquals("Iguanodon", dinosaur.getType());
+    }
+
+    @Test
+    public void canGetName(){
+        assertEquals("Elvis", dinosaur.getName());
+    }
 }

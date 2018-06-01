@@ -14,4 +14,12 @@ public class Dinosaur {
     public FeedType getFeedType(){
         return this.feedType;
     }
+
+    public String getType(){
+        return this.type;
+    }
+
+    public String getName(){
+        return this.name;
+    }
 }
