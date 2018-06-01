@@ -2,37 +2,38 @@ package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class DinosaurTest {
-    Dinosaur dinosaur;
+public class PteranodonTest {
+    Pteranodon pteranodon;
 
     @Before
     public void before(){
-        dinosaur = new Dinosaur(FeedType.HERBIVORE, "Iguanodon", "Elvis");
+        pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Elvis");
     }
 
     @Test
     public void canGetFeedType(){
-        assertEquals(FeedType.HERBIVORE, dinosaur.getFeedType());
+        assertEquals(FeedType.HERBIVORE, pteranodon.getFeedType());
     }
 
     @Test
     public void canGeType(){
-        assertEquals("Iguanodon", dinosaur.getType());
+        assertEquals("Iguanodon", pteranodon.getType());
     }
 
     @Test
     public void canGetName(){
-        assertEquals("Elvis", dinosaur.getName());
+        assertEquals("Elvis", pteranodon.getName());
     }
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", dinosaur.eat());
+        assertEquals("Mmmm", pteranodon.eat());
     }
 }

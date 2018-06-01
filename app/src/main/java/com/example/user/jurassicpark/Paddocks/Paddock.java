@@ -6,10 +6,16 @@ import java.util.ArrayList;
 
 public abstract class Paddock {
     private PaddockType type;
-    private ArrayList<Dinosaur> dinosaurList;
 
-    public Paddock(PaddockType type, ArrayList<Dinosaur> dinosaurList){
+    public Paddock(PaddockType type){
         this.type = type;
-        this.dinosaurList = dinosaurList;
     }
+
+    public PaddockType getType() {
+        return this.type;
+    }
+
+    public abstract int dinosaurCount();
+
+
 }
