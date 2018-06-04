@@ -32,6 +32,11 @@ public class VelociraptorPaddockTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, velociraptorPaddock.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(1, velociraptorPaddock.dinosaurCount());
     }

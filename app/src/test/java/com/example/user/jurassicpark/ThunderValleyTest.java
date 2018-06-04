@@ -35,6 +35,11 @@ public class ThunderValleyTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(1, thunderValley.dinosaurCount());
     }

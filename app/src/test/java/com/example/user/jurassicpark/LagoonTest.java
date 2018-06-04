@@ -33,6 +33,11 @@ public class LagoonTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, lagoon.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(1, lagoon.dinosaurCount());
     }

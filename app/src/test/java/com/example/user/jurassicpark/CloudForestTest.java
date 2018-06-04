@@ -39,6 +39,11 @@ public class CloudForestTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, cloudForest.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(2, cloudForest.dinosaurCount());
     }

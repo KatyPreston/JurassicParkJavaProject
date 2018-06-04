@@ -33,6 +33,11 @@ public class AviaryTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, aviary.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(1, aviary.dinosaurCount());
     }

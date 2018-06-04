@@ -32,6 +32,11 @@ public class TRexPaddockTest {
     }
 
     @Test
+    public void canGetBoundaryHealth(){
+        assertEquals(100, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(1, tRexPaddock.dinosaurCount());
     }

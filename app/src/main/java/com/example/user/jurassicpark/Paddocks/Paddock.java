@@ -5,13 +5,19 @@ import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
 
 public abstract class Paddock {
     private PaddockType type;
+    private int boundaryHealth;
 
     public Paddock(PaddockType type){
         this.type = type;
+        this.boundaryHealth = 100;
     }
 
     public PaddockType getType() {
         return this.type;
+    }
+
+    public int getBoundaryHealth(){
+        return this.boundaryHealth;
     }
 
     public abstract int dinosaurCount();
