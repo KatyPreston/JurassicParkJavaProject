@@ -8,16 +8,16 @@ import java.util.ArrayList;
 public class Park {
     private ArrayList<Paddock> paddocks;
     private ArrayList<Visitor> visitors;
-    private double money;
+    private double revenue;
 
-    public Park(ArrayList<Paddock> paddocks, ArrayList<Visitor> visitors, double money){
+    public Park(ArrayList<Paddock> paddocks, ArrayList<Visitor> visitors, double revenue){
         this.paddocks = paddocks;
         this.visitors = visitors;
-        this.money = money;
+        this.revenue = revenue;
     }
 
-    public double totalMoney(){
-        return this.money;
+    public double totalRevenue(){
+        return this.revenue;
     }
 
     public int visitorCount(){

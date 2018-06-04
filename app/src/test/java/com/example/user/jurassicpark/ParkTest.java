@@ -26,8 +26,8 @@ public class ParkTest {
     }
 
     @Test
-    public void canGetTotalMoney(){
-        assertEquals(0, park.totalMoney(), 0.1);
+    public void canGetTotalRevenue(){
+        assertEquals(0, park.totalRevenue(), 0.1);
     }
 
     @Test
