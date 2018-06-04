@@ -37,6 +37,11 @@ public class MosasaurusTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(20, mosasaurus.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         mosasaurus.eat();
         assertEquals(1, mosasaurus.getHungerLevel());

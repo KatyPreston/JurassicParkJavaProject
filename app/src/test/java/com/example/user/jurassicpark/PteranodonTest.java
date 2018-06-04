@@ -37,6 +37,11 @@ public class PteranodonTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(50, pteranodon.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         pteranodon.eat();
         assertEquals(1, pteranodon.getHungerLevel());

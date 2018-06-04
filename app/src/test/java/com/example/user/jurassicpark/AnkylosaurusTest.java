@@ -37,6 +37,11 @@ public class AnkylosaurusTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(40, ankylosaurus.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         ankylosaurus.eat();
         assertEquals(1, ankylosaurus.getHungerLevel());

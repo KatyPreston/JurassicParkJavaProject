@@ -37,6 +37,11 @@ public class VelociraptorTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(30, velociraptor.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         velociraptor.eat();
         assertEquals(1, velociraptor.getHungerLevel());

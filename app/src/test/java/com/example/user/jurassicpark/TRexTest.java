@@ -37,6 +37,11 @@ public class TRexTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(60, tRex.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         tRex.eat();
         assertEquals(1, tRex.getHungerLevel());

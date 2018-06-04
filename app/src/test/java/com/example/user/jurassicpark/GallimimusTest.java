@@ -37,6 +37,11 @@ public class GallimimusTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(20, gallimimus.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         gallimimus.eat();
         assertEquals(1, gallimimus.getHungerLevel());

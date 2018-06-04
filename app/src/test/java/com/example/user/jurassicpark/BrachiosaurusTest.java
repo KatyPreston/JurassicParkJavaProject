@@ -37,6 +37,11 @@ public class BrachiosaurusTest {
     }
 
     @Test
+    public void canGetRampagePower(){
+        assertEquals(70, brachiosaurus.getRampagePower());
+    }
+
+    @Test
     public void canEat(){
         brachiosaurus.eat();
         assertEquals(1, brachiosaurus.getHungerLevel());
