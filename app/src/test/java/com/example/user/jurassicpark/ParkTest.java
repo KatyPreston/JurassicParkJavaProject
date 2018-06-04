@@ -22,7 +22,7 @@ public class ParkTest {
     public void before(){
         paddocks = new ArrayList<>();
         visitors = new ArrayList<>();
-        park = new Park(paddocks, visitors, 0);
+        park = new Park(paddocks, visitors, 0, 20);
     }
 
     @Test
@@ -31,9 +31,25 @@ public class ParkTest {
     }
 
     @Test
+    public void canGetVisitorCapacity(){
+        assertEquals(20, park.getVisitorCapacity());
+    }
+
+    @Test
     public void canAddVisitor(){
         park.addVisitor(visitor);
         assertEquals(1, park.visitorCount());
+    }
+
+    @Test
+    public void cannotAddOverVisitorCapacity(){
+        Park park2 = new Park(paddocks, visitors, 0, 3);
+        park2.addVisitor(visitor);
+        park2.addVisitor(visitor);
+        park2.addVisitor(visitor);
+        park2.addVisitor(visitor);
+
+        assertEquals(3, park2.visitorCount());
     }
 
     @Test

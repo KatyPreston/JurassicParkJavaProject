@@ -9,15 +9,21 @@ public class Park {
     private ArrayList<Paddock> paddocks;
     private ArrayList<Visitor> visitors;
     private double revenue;
+    private int visitorCapacity;
 
-    public Park(ArrayList<Paddock> paddocks, ArrayList<Visitor> visitors, double revenue){
+    public Park(ArrayList<Paddock> paddocks, ArrayList<Visitor> visitors, double revenue, int visitorCapacity){
         this.paddocks = paddocks;
         this.visitors = visitors;
         this.revenue = revenue;
+        this.visitorCapacity = visitorCapacity;
     }
 
     public double totalRevenue(){
         return this.revenue;
+    }
+
+    public int getVisitorCapacity() {
+        return this.visitorCapacity;
     }
 
     public int visitorCount(){
@@ -25,7 +31,8 @@ public class Park {
     }
 
     public void addVisitor(Visitor visitor){
-        this.visitors.add(visitor);
+        if(visitorCount() < visitorCapacity){
+        this.visitors.add(visitor); }
     }
 
     public void removeVisitor(Visitor visitor){
@@ -49,4 +56,6 @@ public class Park {
         this.addVisitor(visitor);
         this.revenue += 50;
     }
+
+
 }
