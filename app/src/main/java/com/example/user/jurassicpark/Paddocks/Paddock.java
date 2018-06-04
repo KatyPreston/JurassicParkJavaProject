@@ -1,6 +1,8 @@
 package com.example.user.jurassicpark.Paddocks;
 
 
+import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
+
 public abstract class Paddock {
     private PaddockType type;
 
@@ -13,6 +15,10 @@ public abstract class Paddock {
     }
 
     public abstract int dinosaurCount();
+
+    public String feedDinosaur(Dinosaur dinosaur){
+        return dinosaur.eat();
+    }
 
 
 

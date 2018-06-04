@@ -47,4 +47,9 @@ public class VelociraptorPaddockTest {
         velociraptorPaddock.removeDinosaur(velociraptor);
         assertEquals(0, velociraptorPaddock.dinosaurCount());
     }
+
+    @Test
+    public void canFeedDinosaur(){
+        assertEquals("Mmmm", velociraptorPaddock.feedDinosaur(velociraptor));
+    }
 }

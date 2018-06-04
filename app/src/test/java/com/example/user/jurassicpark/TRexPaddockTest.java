@@ -47,4 +47,9 @@ public class TRexPaddockTest {
         tRexPaddock.removeDinosaur(tRex);
         assertEquals(0, tRexPaddock.dinosaurCount());
     }
+
+    @Test
+    public void canFeedDinosaur(){
+        assertEquals("Mmmm", tRexPaddock.feedDinosaur(tRex));
+    }
 }

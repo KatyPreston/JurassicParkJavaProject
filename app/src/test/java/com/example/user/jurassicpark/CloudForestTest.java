@@ -75,4 +75,9 @@ public class CloudForestTest {
         assertEquals(2, cloudForest.dinosaurCount());
         assertEquals(0, thunderValley.dinosaurCount());
     }
+
+    @Test
+    public void canFeedDinosaur(){
+        assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
+    }
 }

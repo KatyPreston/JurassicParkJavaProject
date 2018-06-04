@@ -49,4 +49,9 @@ public class AviaryTest {
         assertEquals(0, aviary.dinosaurCount());
     }
 
+    @Test
+    public void canFeedDinosaur(){
+        assertEquals("Mmmm", aviary.feedDinosaur(pteranodon));
+    }
+
 }

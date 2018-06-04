@@ -71,4 +71,9 @@ public class ThunderValleyTest {
         assertEquals(1, thunderValley.dinosaurCount());
         assertEquals(0, cloudForest.dinosaurCount());
     }
+
+    @Test
+    public void canFeedDinosaur(){
+        assertEquals("Mmmm", thunderValley.feedDinosaur(brachiosaurus));
+    }
 }
