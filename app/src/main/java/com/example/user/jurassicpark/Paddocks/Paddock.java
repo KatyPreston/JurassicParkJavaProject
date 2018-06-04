@@ -17,7 +17,8 @@ public abstract class Paddock {
     public abstract int dinosaurCount();
 
     public String feedDinosaur(Dinosaur dinosaur){
-        return dinosaur.eat();
+        dinosaur.eat();
+        return "Mmmm";
     }
 
 

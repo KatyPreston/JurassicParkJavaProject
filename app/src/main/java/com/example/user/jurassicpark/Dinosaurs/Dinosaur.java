@@ -29,7 +29,7 @@ public class Dinosaur {
         return this.hungerLevel;
     }
 
-    public String eat(){
-        return "Mmmm";
+    public void eat(){
+        this.hungerLevel = 1;
     }
 }

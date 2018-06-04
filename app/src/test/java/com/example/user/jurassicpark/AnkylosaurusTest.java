@@ -38,6 +38,7 @@ public class AnkylosaurusTest {
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", ankylosaurus.eat());
+        ankylosaurus.eat();
+        assertEquals(1, ankylosaurus.getHungerLevel());
     }
 }

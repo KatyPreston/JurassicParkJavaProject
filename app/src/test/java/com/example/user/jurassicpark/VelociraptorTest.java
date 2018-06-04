@@ -38,7 +38,8 @@ public class VelociraptorTest {
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", velociraptor.eat());
+        velociraptor.eat();
+        assertEquals(1, velociraptor.getHungerLevel());
     }
 
 }

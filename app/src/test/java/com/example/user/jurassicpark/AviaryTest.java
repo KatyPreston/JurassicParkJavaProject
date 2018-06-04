@@ -52,6 +52,7 @@ public class AviaryTest {
     @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", aviary.feedDinosaur(pteranodon));
+        assertEquals(1, pteranodon.getHungerLevel());
     }
 
 }

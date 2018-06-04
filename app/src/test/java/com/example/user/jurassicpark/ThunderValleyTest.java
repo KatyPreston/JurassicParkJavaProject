@@ -75,5 +75,6 @@ public class ThunderValleyTest {
     @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", thunderValley.feedDinosaur(brachiosaurus));
+        assertEquals(1, brachiosaurus.getHungerLevel());
     }
 }

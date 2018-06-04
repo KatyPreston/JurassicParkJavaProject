@@ -38,6 +38,7 @@ public class TRexTest {
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", tRex.eat());
+        tRex.eat();
+        assertEquals(1, tRex.getHungerLevel());
     }
 }

@@ -52,6 +52,7 @@ public class LagoonTest {
     @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", lagoon.feedDinosaur(mosasaurus));
+        assertEquals(1, mosasaurus.getHungerLevel());
     }
 
 }

@@ -51,5 +51,6 @@ public class TRexPaddockTest {
     @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", tRexPaddock.feedDinosaur(tRex));
+        assertEquals(1, tRex.getHungerLevel());
     }
 }

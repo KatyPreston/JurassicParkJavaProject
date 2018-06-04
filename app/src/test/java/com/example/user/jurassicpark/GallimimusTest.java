@@ -38,6 +38,7 @@ public class GallimimusTest {
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", gallimimus.eat());
+        gallimimus.eat();
+        assertEquals(1, gallimimus.getHungerLevel());
     }
 }

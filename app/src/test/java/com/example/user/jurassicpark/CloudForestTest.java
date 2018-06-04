@@ -79,5 +79,6 @@ public class CloudForestTest {
     @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
+        assertEquals(1, gallimimus.getHungerLevel());
     }
 }

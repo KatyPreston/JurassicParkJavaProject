@@ -38,6 +38,7 @@ public class PteranodonTest {
 
     @Test
     public void canEat(){
-        assertEquals("Mmmm", pteranodon.eat());
+        pteranodon.eat();
+        assertEquals(1, pteranodon.getHungerLevel());
     }
 }
