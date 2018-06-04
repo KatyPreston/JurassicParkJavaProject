@@ -24,4 +24,10 @@ public class VisitorTest {
     public void canGetWallet(){
         assertEquals(100, visitor.getWallet(), 0.1);
     }
+
+    @Test
+    public void canPayEntry(){
+        visitor.payEntry(50);
+        assertEquals(50, visitor.getWallet(), 0.1);
+    }
 }

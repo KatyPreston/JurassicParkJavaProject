@@ -16,4 +16,8 @@ public class Visitor {
     public double getWallet() {
         return this.wallet;
     }
+
+    public void payEntry(double fee){
+        this.wallet -= fee;
+    }
 }
