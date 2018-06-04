@@ -13,7 +13,7 @@ public class AnkylosaurusTest {
 
     @Before
     public void before(){
-        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Stompy");
+        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Stompy", 1);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class AnkylosaurusTest {
     @Test
     public void canGetName(){
         assertEquals("Stompy", ankylosaurus.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(1, ankylosaurus.getHungerLevel());
     }
 
     @Test

@@ -22,7 +22,7 @@ public class ThunderValleyTest {
 
     @Before
     public void before(){
-        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Cecilia");
+        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Cecilia", 7);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(brachiosaurus);
 
@@ -65,7 +65,7 @@ public class ThunderValleyTest {
     public void cannotTransferCarnivore(){
         ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
         CloudForest  cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
+        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws", 7);
 
         thunderValley.transferHerbivore(tRex, cloudForest);
         assertEquals(1, thunderValley.dinosaurCount());

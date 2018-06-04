@@ -20,7 +20,7 @@ public class AviaryTest {
 
     @Before
     public void before(){
-        pteranodon = new Pteranodon(FeedType.CARNIVORE, "Pteranodon", "Sylvester");
+        pteranodon = new Pteranodon(FeedType.CARNIVORE, "Pteranodon", "Sylvester", 2);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(pteranodon);
 

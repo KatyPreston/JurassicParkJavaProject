@@ -13,7 +13,7 @@ public class TRexTest {
 
     @Before
     public void before(){
-        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Grumpy");
+        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Grumpy", 8);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class TRexTest {
     @Test
     public void canGetName(){
         assertEquals("Grumpy", tRex.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(8, tRex.getHungerLevel());
     }
 
     @Test

@@ -13,7 +13,7 @@ public class PteranodonTest {
 
     @Before
     public void before(){
-        pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Elvis");
+        pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Elvis", 3);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class PteranodonTest {
     @Test
     public void canGetName(){
         assertEquals("Elvis", pteranodon.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(3, pteranodon.getHungerLevel());
     }
 
     @Test

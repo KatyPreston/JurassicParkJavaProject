@@ -24,8 +24,8 @@ public class CloudForestTest {
 
     @Before
     public void before(){
-        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Wilma");
-        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Sid");
+        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Wilma", 4);
+        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Sid", 6);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(ankylosaurus);
         dinosaurList.add(gallimimus);
@@ -69,7 +69,7 @@ public class CloudForestTest {
     public void cannotTransferCarnivore(){
         ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
         ThunderValley  thunderValley = new ThunderValley(PaddockType.THUNDERVALLEY, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
+        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws", 5);
 
         cloudForest.transferHerbivore(tRex, thunderValley);
         assertEquals(2, cloudForest.dinosaurCount());

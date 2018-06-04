@@ -13,7 +13,7 @@ public class MosasaurusTest {
 
     @Before
     public void before(){
-        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon");
+        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon", 10);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class MosasaurusTest {
     @Test
     public void canGetName(){
         assertEquals("Simon", mosasaurus.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(10, mosasaurus.getHungerLevel());
     }
 
     @Test

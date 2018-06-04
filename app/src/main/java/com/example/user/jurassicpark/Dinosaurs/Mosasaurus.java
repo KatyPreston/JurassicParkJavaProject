@@ -4,7 +4,7 @@ import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
 
 public class Mosasaurus extends Dinosaur implements ISwim {
 
-    public Mosasaurus(FeedType feedType, String type, String name){
-        super(feedType, type, name);
+    public Mosasaurus(FeedType feedType, String type, String name, int hungerLevel){
+        super(feedType, type, name, hungerLevel);
     }
 }

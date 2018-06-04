@@ -19,7 +19,7 @@ public class TRexPaddockTest {
 
     @Before
     public void before(){
-        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Bruce");
+        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Bruce", 3);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(tRex);
 

@@ -20,7 +20,7 @@ public class LagoonTest {
 
     @Before
     public void before(){
-        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon");
+        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon", 2);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(mosasaurus);
 

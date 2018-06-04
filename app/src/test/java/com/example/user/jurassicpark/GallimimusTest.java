@@ -13,7 +13,7 @@ public class GallimimusTest {
 
     @Before
     public void before(){
-        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Fergus");
+        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Fergus", 5);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class GallimimusTest {
     @Test
     public void canGetName(){
         assertEquals("Fergus", gallimimus.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(5, gallimimus.getHungerLevel());
     }
 
     @Test

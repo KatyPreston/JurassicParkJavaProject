@@ -19,7 +19,7 @@ public class VelociraptorPaddockTest {
 
     @Before
     public void before(){
-        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Pinky");
+        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Pinky", 4);
         dinosaurList = new ArrayList<>();
         dinosaurList.add(velociraptor);
 

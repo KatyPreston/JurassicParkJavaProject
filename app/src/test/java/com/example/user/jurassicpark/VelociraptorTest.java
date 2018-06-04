@@ -13,7 +13,7 @@ public class VelociraptorTest {
 
     @Before
     public void before(){
-        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue");
+        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue", 2);
     }
 
     @Test
@@ -29,6 +29,11 @@ public class VelociraptorTest {
     @Test
     public void canGetName(){
         assertEquals("Blue", velociraptor.getName());
+    }
+
+    @Test
+    public void canGetHungerLevel(){
+        assertEquals(2, velociraptor.getHungerLevel());
     }
 
     @Test

@@ -4,11 +4,13 @@ public class Dinosaur {
     private FeedType feedType;
     private String type;
     private String name;
+    private int hungerLevel;
 
-    public Dinosaur(FeedType feedType, String type, String name){
+    public Dinosaur(FeedType feedType, String type, String name, int hungerLevel){
         this.feedType = feedType;
         this.type = type;
         this.name = name;
+        this.hungerLevel = hungerLevel;
     }
 
     public FeedType getFeedType(){
@@ -21,6 +23,10 @@ public class Dinosaur {
 
     public String getName(){
         return this.name;
+    }
+
+    public int getHungerLevel(){
+        return this.hungerLevel;
     }
 
     public String eat(){
