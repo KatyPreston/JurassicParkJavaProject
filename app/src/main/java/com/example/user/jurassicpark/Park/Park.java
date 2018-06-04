@@ -43,4 +43,10 @@ public class Park {
     public void removePaddock(Paddock paddock){
         this.paddocks.remove(paddock);
     }
+
+    public void chargeEntry(Visitor visitor){
+        visitor.payEntry(50);
+        this.addVisitor(visitor);
+        this.revenue += 50;
+    }
 }

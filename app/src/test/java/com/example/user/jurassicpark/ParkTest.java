@@ -66,4 +66,14 @@ public class ParkTest {
     public void canCountPaddocks(){
         assertEquals(0, park.paddockCount());
     }
+
+    @Test
+    public void canChargeEntry(){
+        visitor = new Visitor("Ted", 100);
+
+        park.chargeEntry(visitor);
+        assertEquals(50, park.totalRevenue(), 0.1);
+        assertEquals(50, visitor.getWallet(), 0.1);
+        assertEquals(1, park.visitorCount());
+    }
 }
