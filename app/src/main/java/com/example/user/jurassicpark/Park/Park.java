@@ -31,4 +31,16 @@ public class Park {
     public void removeVisitor(Visitor visitor){
         this.visitors.remove(visitor);
     }
+
+    public int paddockCount(){
+        return this.paddocks.size();
+    }
+
+    public void addPaddock(Paddock paddock){
+        this.paddocks.add(paddock);
+    }
+
+    public void removePaddock(Paddock paddock){
+        this.paddocks.remove(paddock);
+    }
 }

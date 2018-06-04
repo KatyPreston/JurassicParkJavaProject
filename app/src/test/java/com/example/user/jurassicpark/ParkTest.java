@@ -48,4 +48,22 @@ public class ParkTest {
         assertEquals(0, park.visitorCount());
 
     }
+
+    @Test
+    public void canAddPaddock(){
+        park.addPaddock(paddock);
+        assertEquals(1, park.paddockCount());
+    }
+
+    @Test
+    public void canRemovePaddock(){
+        park.addPaddock(paddock);
+        park.removePaddock(paddock);
+        assertEquals(0, park.paddockCount());
+    }
+
+    @Test
+    public void canCountPaddocks(){
+        assertEquals(0, park.paddockCount());
+    }
 }
