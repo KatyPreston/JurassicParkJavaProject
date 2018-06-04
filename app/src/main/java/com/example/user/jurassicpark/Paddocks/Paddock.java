@@ -1,8 +1,6 @@
 package com.example.user.jurassicpark.Paddocks;
 
 
-import com.example.user.jurassicpark.Dinosaurs.Dinosaur;
-
 public abstract class Paddock {
     private PaddockType type;
 

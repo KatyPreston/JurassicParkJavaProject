@@ -3,6 +3,8 @@ package com.example.user.jurassicpark;
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.TRex;
+import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.ThunderValley;
 
@@ -47,5 +49,26 @@ public class ThunderValleyTest {
     public void canRemoveDinosaur(){
         thunderValley.removeDinosaur(brachiosaurus);
         assertEquals(0, thunderValley.dinosaurCount());
+    }
+
+    @Test
+    public void canTransferHerbivore(){
+        ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
+        CloudForest  cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurlist2);
+        thunderValley.transferHerbivore(brachiosaurus, cloudForest);
+
+        assertEquals(1, cloudForest.dinosaurCount());
+        assertEquals(0, thunderValley.dinosaurCount());
+    }
+
+    @Test
+    public void cannotTransferCarnivore(){
+        ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
+        CloudForest  cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurlist2);
+        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
+
+        thunderValley.transferHerbivore(tRex, cloudForest);
+        assertEquals(1, thunderValley.dinosaurCount());
+        assertEquals(0, cloudForest.dinosaurCount());
     }
 }
