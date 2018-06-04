@@ -42,4 +42,10 @@ public class ThunderValleyTest {
         thunderValley.addDinosaur(brachiosaurus);
         assertEquals(2, thunderValley.dinosaurCount());
     }
+
+    @Test
+    public void canRemoveDinosaur(){
+        thunderValley.removeDinosaur(brachiosaurus);
+        assertEquals(0, thunderValley.dinosaurCount());
+    }
 }

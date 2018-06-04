@@ -19,4 +19,8 @@ public class VelociraptorPaddock extends Paddock {
     public void addDinosaur(Velociraptor dinosaur){
         this.dinosaurList.add(dinosaur);
     }
+
+    public void removeDinosaur(Velociraptor dinosaur){
+        this.dinosaurList.remove(dinosaur);
+    }
 }

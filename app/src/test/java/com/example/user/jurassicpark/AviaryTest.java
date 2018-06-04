@@ -43,4 +43,10 @@ public class AviaryTest {
         assertEquals(2, aviary.dinosaurCount());
     }
 
+    @Test
+    public void canRemoveDinosaur(){
+        aviary.removeDinosaur(pteranodon);
+        assertEquals(0, aviary.dinosaurCount());
+    }
+
 }

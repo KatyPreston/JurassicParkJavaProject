@@ -20,4 +20,8 @@ public class TRexPaddock extends Paddock {
         this.dinosaurList.add(dinosaur);
     }
 
+    public void removeDinosaur(TRex dinosaur){
+        this.dinosaurList.remove(dinosaur);
+    }
+
 }

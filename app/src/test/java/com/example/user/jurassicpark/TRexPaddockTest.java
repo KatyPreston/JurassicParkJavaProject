@@ -41,4 +41,10 @@ public class TRexPaddockTest {
         tRexPaddock.addDinosaur(tRex);
         assertEquals(2, tRexPaddock.dinosaurCount());
     }
+
+    @Test
+    public void canRemoveDinosaur(){
+        tRexPaddock.removeDinosaur(tRex);
+        assertEquals(0, tRexPaddock.dinosaurCount());
+    }
 }

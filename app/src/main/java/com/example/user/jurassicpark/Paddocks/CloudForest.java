@@ -19,4 +19,8 @@ public class CloudForest extends Paddock{
     public void addDinosaur(IWalk dinosaur){
         this.dinosaurList.add(dinosaur);
     }
+
+    public void removeDinosaur(IWalk dinosaur){
+        this.dinosaurList.remove(dinosaur);
+    }
 }

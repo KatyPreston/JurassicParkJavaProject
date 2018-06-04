@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark.Paddocks;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 
 import java.util.ArrayList;
 
@@ -18,5 +19,9 @@ public class Lagoon extends Paddock {
 
     public void addDinosaur(ISwim dinosaur){
         this.dinosaurList.add(dinosaur);
+    }
+
+    public void removeDinosaur(ISwim dinosaur){
+        this.dinosaurList.remove(dinosaur);
     }
 }

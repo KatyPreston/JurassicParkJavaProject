@@ -46,4 +46,10 @@ public class CloudForestTest {
         cloudForest.addDinosaur(ankylosaurus);
         assertEquals(3, cloudForest.dinosaurCount());
     }
+
+    @Test
+    public void canRemoveDinosaur(){
+        cloudForest.removeDinosaur(gallimimus);
+        assertEquals(1, cloudForest.dinosaurCount());
+    }
 }
