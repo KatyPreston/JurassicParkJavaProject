@@ -15,4 +15,8 @@ public class VelociraptorPaddock extends Paddock {
     public int dinosaurCount(){
         return this.dinosaurList.size();
     }
+
+    public void addDinosaur(Velociraptor dinosaur){
+        this.dinosaurList.add(dinosaur);
+    }
 }

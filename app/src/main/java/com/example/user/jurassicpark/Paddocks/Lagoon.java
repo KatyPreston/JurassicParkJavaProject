@@ -15,4 +15,8 @@ public class Lagoon extends Paddock {
     public int dinosaurCount(){
         return this.dinosaurList.size();
     }
+
+    public void addDinosaur(ISwim dinosaur){
+        this.dinosaurList.add(dinosaur);
+    }
 }

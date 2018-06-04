@@ -40,4 +40,10 @@ public class CloudForestTest {
     public void canCountDinosaurs(){
         assertEquals(2, cloudForest.dinosaurCount());
     }
+
+    @Test
+    public void canAddDinosaur(){
+        cloudForest.addDinosaur(ankylosaurus);
+        assertEquals(3, cloudForest.dinosaurCount());
+    }
 }

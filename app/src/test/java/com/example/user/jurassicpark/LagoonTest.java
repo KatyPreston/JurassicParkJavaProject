@@ -37,4 +37,10 @@ public class LagoonTest {
         assertEquals(1, lagoon.dinosaurCount());
     }
 
+    @Test
+    public void canAddDinosaur(){
+        lagoon.addDinosaur(mosasaurus);
+        assertEquals(2, lagoon.dinosaurCount());
+    }
+
 }

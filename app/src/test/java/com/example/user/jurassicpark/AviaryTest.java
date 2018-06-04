@@ -37,5 +37,10 @@ public class AviaryTest {
         assertEquals(1, aviary.dinosaurCount());
     }
 
+    @Test
+    public void canAddDinosaur(){
+        aviary.addDinosaur(pteranodon);
+        assertEquals(2, aviary.dinosaurCount());
+    }
 
 }

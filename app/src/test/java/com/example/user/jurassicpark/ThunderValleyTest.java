@@ -36,4 +36,10 @@ public class ThunderValleyTest {
     public void canCountDinosaurs(){
         assertEquals(1, thunderValley.dinosaurCount());
     }
+
+    @Test
+    public void canAddDinosaur(){
+        thunderValley.addDinosaur(brachiosaurus);
+        assertEquals(2, thunderValley.dinosaurCount());
+    }
 }

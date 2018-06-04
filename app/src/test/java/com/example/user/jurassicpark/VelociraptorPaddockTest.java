@@ -35,4 +35,10 @@ public class VelociraptorPaddockTest {
     public void canCountDinosaurs(){
         assertEquals(1, velociraptorPaddock.dinosaurCount());
     }
+
+    @Test
+    public void canAddDinosaur(){
+        velociraptorPaddock.addDinosaur(velociraptor);
+        assertEquals(2, velociraptorPaddock.dinosaurCount());
+    }
 }

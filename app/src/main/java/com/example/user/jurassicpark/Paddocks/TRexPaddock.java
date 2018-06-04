@@ -16,4 +16,8 @@ public class TRexPaddock extends Paddock {
         return this.dinosaurList.size();
     }
 
+    public void addDinosaur(TRex dinosaur){
+        this.dinosaurList.add(dinosaur);
+    }
+
 }

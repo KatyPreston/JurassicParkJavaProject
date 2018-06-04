@@ -15,4 +15,8 @@ public class CloudForest extends Paddock{
     public int dinosaurCount(){
         return this.dinosaurList.size();
     }
+
+    public void addDinosaur(IWalk dinosaur){
+        this.dinosaurList.add(dinosaur);
+    }
 }

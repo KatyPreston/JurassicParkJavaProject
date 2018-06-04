@@ -35,4 +35,10 @@ public class TRexPaddockTest {
     public void canCountDinosaurs(){
         assertEquals(1, tRexPaddock.dinosaurCount());
     }
+
+    @Test
+    public void canAddDinosaur(){
+        tRexPaddock.addDinosaur(tRex);
+        assertEquals(2, tRexPaddock.dinosaurCount());
+    }
 }
