@@ -68,19 +68,19 @@ public class ParkTest {
     @Test
     public void canAddPaddock(){
         park.addPaddock(paddock);
-        assertEquals(1, park.paddockCount());
+        assertEquals(7, park.paddockCount());
     }
 
     @Test
     public void canRemovePaddock(){
         park.addPaddock(paddock);
         park.removePaddock(paddock);
-        assertEquals(0, park.paddockCount());
+        assertEquals(6, park.paddockCount());
     }
 
     @Test
     public void canCountPaddocks(){
-        assertEquals(0, park.paddockCount());
+        assertEquals(6, park.paddockCount());
     }
 
     @Test
