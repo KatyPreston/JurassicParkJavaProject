@@ -1,6 +1,11 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
+import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
+import com.example.user.jurassicpark.Paddocks.Aviary;
 import com.example.user.jurassicpark.Paddocks.Paddock;
+import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Park.Park;
 import com.example.user.jurassicpark.Visitors.Visitor;
 
@@ -14,12 +19,15 @@ import static org.junit.Assert.assertEquals;
 public class ParkTest {
     Park park;
     Visitor visitor;
-    Paddock paddock;
     ArrayList<Paddock> paddocks;
     ArrayList<Visitor> visitors;
+    ArrayList<IFly> dinosaurs;
+    Aviary aviary;
 
     @Before
     public void before(){
+        dinosaurs = new ArrayList<>();
+        aviary = new Aviary(PaddockType.AVIARY, dinosaurs);
         paddocks = new ArrayList<>();
         visitors = new ArrayList<>();
         park = new Park(paddocks, visitors, 0, 20);
@@ -67,14 +75,14 @@ public class ParkTest {
 
     @Test
     public void canAddPaddock(){
-        park.addPaddock(paddock);
+        park.addPaddock(aviary);
         assertEquals(7, park.paddockCount());
     }
 
     @Test
     public void canRemovePaddock(){
-        park.addPaddock(paddock);
-        park.removePaddock(paddock);
+        park.addPaddock(aviary);
+        park.removePaddock(aviary);
         assertEquals(6, park.paddockCount());
     }
 
@@ -91,5 +99,17 @@ public class ParkTest {
         assertEquals(50, park.totalRevenue(), 0.1);
         assertEquals(50, visitor.getWallet(), 0.1);
         assertEquals(1, park.visitorCount());
+    }
+
+    @Test
+    public void canRepairPaddockBoundary(){
+        Pteranodon pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Hedwig", 9);
+        ArrayList<IFly> dinosaurs = new ArrayList<>();
+        Aviary aviary = new Aviary(PaddockType.AVIARY, dinosaurs);
+        aviary.dinosaurHitBoundary(pteranodon);
+        assertEquals(50, aviary.getBoundaryHealth());
+        park.repairPaddock(aviary);
+        assertEquals(100, aviary.getBoundaryHealth());
+        assertEquals(-50, park.totalRevenue(), 0.1);
     }
 }

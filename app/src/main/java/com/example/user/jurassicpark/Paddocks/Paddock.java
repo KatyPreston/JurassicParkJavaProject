@@ -23,6 +23,10 @@ public abstract class Paddock {
         return this.boundaryHealth;
     }
 
+    public int setBoundaryHealth(int value){
+        return this.boundaryHealth = value;
+    }
+
     public abstract int dinosaurCount();
 
     public String feedDinosaur(Dinosaur dinosaur){

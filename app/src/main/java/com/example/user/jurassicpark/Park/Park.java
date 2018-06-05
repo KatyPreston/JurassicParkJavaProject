@@ -89,4 +89,8 @@ public class Park {
     }
 
 
+    public void repairPaddock(Paddock paddock){
+        paddock.setBoundaryHealth(100);
+        this.revenue -= 50;
+    }
 }
