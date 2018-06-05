@@ -58,4 +58,10 @@ public class VelociraptorPaddockTest {
         assertEquals("Mmmm", velociraptorPaddock.feedDinosaur(velociraptor));
         assertEquals(1, velociraptor.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanRampage(){
+        velociraptorPaddock.dinosaurRampage(velociraptor);
+        assertEquals(70, velociraptorPaddock.getBoundaryHealth());
+    }
 }

@@ -60,4 +60,10 @@ public class LagoonTest {
         assertEquals(1, mosasaurus.getHungerLevel());
     }
 
+    @Test
+    public void dinosaurCanRampage(){
+        lagoon.dinosaurRampage(mosasaurus);
+        assertEquals(80, lagoon.getBoundaryHealth());
+    }
+
 }

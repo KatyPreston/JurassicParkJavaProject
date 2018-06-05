@@ -86,4 +86,11 @@ public class CloudForestTest {
         assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
         assertEquals(1, gallimimus.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanRampage(){
+        cloudForest.dinosaurRampage(ankylosaurus);
+        assertEquals(60, cloudForest.getBoundaryHealth());
+    }
+
 }

@@ -60,4 +60,10 @@ public class AviaryTest {
         assertEquals(1, pteranodon.getHungerLevel());
     }
 
+    @Test
+    public void dinosaurCanRampage(){
+        aviary.dinosaurRampage(pteranodon);
+        assertEquals(50, aviary.getBoundaryHealth());
+    }
+
 }

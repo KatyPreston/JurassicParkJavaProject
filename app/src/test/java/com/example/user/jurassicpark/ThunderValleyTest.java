@@ -82,4 +82,10 @@ public class ThunderValleyTest {
         assertEquals("Mmmm", thunderValley.feedDinosaur(brachiosaurus));
         assertEquals(1, brachiosaurus.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanRampage(){
+        thunderValley.dinosaurRampage(brachiosaurus);
+        assertEquals(30, thunderValley.getBoundaryHealth());
+    }
 }
