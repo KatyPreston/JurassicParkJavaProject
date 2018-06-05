@@ -16,7 +16,11 @@ public class Gallimimus extends Dinosaur implements IWalk{
     }
 
     public String rampage(Paddock paddock){
-        paddock.dinosaurRampage(this);
-        return "Zip Smash";
+        if (this.getHungerLevel() >= 6) {
+            paddock.dinosaurRampage(this);
+            return "Zip Smash";
+        }
+        else
+            return "Zoop";
     }
 }

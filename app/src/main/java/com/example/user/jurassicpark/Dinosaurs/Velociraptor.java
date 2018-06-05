@@ -16,7 +16,10 @@ public class Velociraptor extends Dinosaur implements IWalk{
     }
 
     public String rampage(Paddock paddock){
-        paddock.dinosaurRampage(this);
-        return "Squawk Grrr";
+        if (this.getHungerLevel() >= 6) {
+            paddock.dinosaurRampage(this);
+            return "Squawk Grrr";
+        } else
+            return "Snort";
     }
 }

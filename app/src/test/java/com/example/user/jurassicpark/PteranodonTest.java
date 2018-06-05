@@ -2,9 +2,12 @@ package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
+import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 import com.example.user.jurassicpark.Paddocks.Aviary;
+import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.Lagoon;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 
@@ -56,11 +59,20 @@ public class PteranodonTest {
 
     @Test
     public void canRampage(){
+        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Fiona", 9);
         ArrayList<IFly> dinosaurs = new ArrayList<>();
         Aviary aviary= new Aviary(PaddockType.AVIARY, dinosaurs);
 
-        assertEquals("Swoosh Caaawww", pteranodon.rampage(aviary));
+        assertEquals("Swoosh Caaawww", pteranodon2.rampage(aviary));
         assertEquals(50, aviary.getBoundaryHealth());
+    }
 
+    @Test
+    public void willNotRampageUnlessHungry(){
+        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+
+        assertEquals("Swoop", pteranodon.rampage(cloudForest));
+        assertEquals(100, cloudForest.getBoundaryHealth());
     }
 }

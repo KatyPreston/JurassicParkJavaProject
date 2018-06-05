@@ -1,8 +1,10 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
+import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
+import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.Lagoon;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.TRexPaddock;
@@ -60,6 +62,17 @@ public class TRexTest {
 
         assertEquals("Grrr Rooaaar", tRex.rampage(tRexPaddock));
         assertEquals(40, tRexPaddock.getBoundaryHealth());
-
     }
+
+    @Test
+    public void willNotRampageUnlessHungry(){
+        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Spikes", 3);
+        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+
+        assertEquals("Humph", tRex2.rampage(cloudForest));
+        assertEquals(100, cloudForest.getBoundaryHealth());
+    }
+
+
 }

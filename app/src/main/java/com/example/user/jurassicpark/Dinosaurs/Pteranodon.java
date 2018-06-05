@@ -15,8 +15,11 @@ public class Pteranodon extends Dinosaur implements IFly{
         return this.rampagePower;
     }
 
-    public String rampage(Paddock paddock){
-        paddock.dinosaurRampage(this);
-        return "Swoosh Caaawww";
+    public String rampage(Paddock paddock) {
+        if (this.getHungerLevel() >= 6) {
+            paddock.dinosaurRampage(this);
+            return "Swoosh Caaawww";
+        } else
+            return "Swoop";
     }
 }

@@ -61,6 +61,15 @@ public class MosasaurusTest {
 
         assertEquals("Blop Bubble Splash", mosasaurus.rampage(lagoon));
         assertEquals(80, lagoon.getBoundaryHealth());
+    }
 
+    @Test
+    public void willNotRampageUnlessHungry(){
+        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Elvis", 4);
+        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+
+        assertEquals("Gurgle", mosasaurus2.rampage(cloudForest));
+        assertEquals(100, cloudForest.getBoundaryHealth());
     }
 }

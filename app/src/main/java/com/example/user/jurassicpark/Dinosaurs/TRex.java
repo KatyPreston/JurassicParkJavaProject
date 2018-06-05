@@ -16,7 +16,10 @@ public class TRex extends Dinosaur implements IWalk{
     }
 
     public String rampage(Paddock paddock){
-        paddock.dinosaurRampage(this);
-        return "Grrr Rooaaar";
+        if (this.getHungerLevel() >= 6) {
+            paddock.dinosaurRampage(this);
+            return "Grrr Rooaaar";
+        } else
+            return "Humph";
     }
 }

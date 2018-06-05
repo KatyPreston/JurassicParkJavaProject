@@ -54,11 +54,22 @@ public class AnkylosaurusTest {
 
     @Test
     public void canRampage(){
+        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Russel", 7);
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Crash Bang Wallop", ankylosaurus.rampage(cloudForest));
+        assertEquals("Crash Bang Wallop", ankylosaurus2.rampage(cloudForest));
         assertEquals(60, cloudForest.getBoundaryHealth());
+
+    }
+
+    @Test
+    public void willNotRampageUnlessHungry(){
+        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+
+        assertEquals("Rumble", ankylosaurus.rampage(cloudForest));
+        assertEquals(100, cloudForest.getBoundaryHealth());
 
     }
 }
