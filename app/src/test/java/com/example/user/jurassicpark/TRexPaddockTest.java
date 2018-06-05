@@ -61,7 +61,8 @@ public class TRexPaddockTest {
 
     @Test
     public void dinosaurCanRampage(){
-        tRexPaddock.dinosaurRampage(tRex);
+        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Arty", 7);
+        tRexPaddock.dinosaurHitBoundary(tRex2);
         assertEquals(40, tRexPaddock.getBoundaryHealth());
     }
 }

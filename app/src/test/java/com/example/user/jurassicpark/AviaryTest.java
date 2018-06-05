@@ -62,7 +62,8 @@ public class AviaryTest {
 
     @Test
     public void dinosaurCanRampage(){
-        aviary.dinosaurRampage(pteranodon);
+        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Wings", 6);
+        aviary.dinosaurHitBoundary(pteranodon2);
         assertEquals(50, aviary.getBoundaryHealth());
     }
 

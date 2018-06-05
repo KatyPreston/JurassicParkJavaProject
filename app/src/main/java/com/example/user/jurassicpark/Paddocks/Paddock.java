@@ -30,13 +30,18 @@ public abstract class Paddock {
         return "Mmmm";
     }
 
-    public void dinosaurRampage(Dinosaur dinosaur){
+    public void dinosaurHitBoundary(Dinosaur dinosaur){
+        if(dinosaur.rampage(this) == true)
         this.boundaryHealth -= dinosaur.getRampagePower();
     }
 
 
     public String dinosaurEscapes(Dinosaur dinosaur){
-        if(this.boundaryHealth == 0);
+        if (dinosaur.rampage(this) == true){
+        while(this.boundaryHealth > 0){
+        dinosaurHitBoundary(dinosaur);
+        }
+    }
         return "Run for your lives!!";
     }
 

@@ -87,7 +87,7 @@ public class ThunderValleyTest {
 
     @Test
     public void dinosaurCanRampage(){
-        thunderValley.dinosaurRampage(brachiosaurus);
+        thunderValley.dinosaurHitBoundary(brachiosaurus);
         assertEquals(30, thunderValley.getBoundaryHealth());
     }
 

@@ -62,7 +62,8 @@ public class LagoonTest {
 
     @Test
     public void dinosaurCanRampage(){
-        lagoon.dinosaurRampage(mosasaurus);
+        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Mark", 8);
+        lagoon.dinosaurHitBoundary(mosasaurus2);
         assertEquals(80, lagoon.getBoundaryHealth());
     }
 

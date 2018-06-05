@@ -61,7 +61,8 @@ public class VelociraptorPaddockTest {
 
     @Test
     public void dinosaurCanRampage(){
-        velociraptorPaddock.dinosaurRampage(velociraptor);
+        Velociraptor velociraptor2 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Yellow", 9);
+        velociraptorPaddock.dinosaurHitBoundary(velociraptor2);
         assertEquals(70, velociraptorPaddock.getBoundaryHealth());
     }
 }

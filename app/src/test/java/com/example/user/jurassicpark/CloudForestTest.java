@@ -46,9 +46,9 @@ public class CloudForestTest {
     @Test
     public void boundaryHealthCannotGoBelowZero(){
         Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Monty", 8);
-        ankylosaurus2.rampage(cloudForest);
-        ankylosaurus2.rampage(cloudForest);
-        ankylosaurus2.rampage(cloudForest);
+        cloudForest.dinosaurHitBoundary(ankylosaurus2);
+        cloudForest.dinosaurHitBoundary(ankylosaurus2);
+        cloudForest.dinosaurHitBoundary(ankylosaurus2);
         assertEquals(0, cloudForest.getBoundaryHealth());
     }
 
@@ -98,21 +98,22 @@ public class CloudForestTest {
 
     @Test
     public void dinosaurCanRampage(){
-        cloudForest.dinosaurRampage(ankylosaurus);
-        assertEquals(60, cloudForest.getBoundaryHealth());
+        cloudForest.dinosaurHitBoundary(gallimimus);
+        assertEquals(80, cloudForest.getBoundaryHealth());
     }
 
     @Test
     public void dinosaurCanEscape(){
-        assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(ankylosaurus));
+        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Lucy", 8);
+//        cloudForest.dinosaurHitBoundary(ankylosaurus2);
+        assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(ankylosaurus2));
+        assertEquals(0, cloudForest.getBoundaryHealth());
     }
 
     @Test
-    public void dinosaurCannotEscape(){
-        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Lucy", 8);
-        ankylosaurus2.rampage(cloudForest);
-
-        assertEquals(60, cloudForest.getBoundaryHealth());
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        cloudForest.dinosaurEscapes(ankylosaurus);
+        assertEquals(100, cloudForest.getBoundaryHealth());
     }
 
 
