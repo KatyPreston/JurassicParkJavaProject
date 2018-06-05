@@ -1,7 +1,5 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
-import com.example.user.jurassicpark.Paddocks.Paddock;
-
 public abstract class Dinosaur {
     private FeedType feedType;
     private String type;
@@ -40,7 +38,7 @@ public abstract class Dinosaur {
 
     public abstract int getRampagePower();
 
-    public boolean rampage(Paddock paddock){
+    public boolean rampage(){
         if(this.hungerLevel >= 6){
             return true;
         }

@@ -3,7 +3,6 @@ package com.example.user.jurassicpark;
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.Gallimimus;
 import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 
@@ -56,17 +55,11 @@ public class BrachiosaurusTest {
     @Test
     public void canRampage(){
         Brachiosaurus brachiosaurus2 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Sean", 6);
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(true, brachiosaurus2.rampage(cloudForest));
+        assertEquals(true, brachiosaurus2.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry() {
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(false, brachiosaurus.rampage(cloudForest));
+        assertEquals(false, brachiosaurus.rampage());
     }
 }

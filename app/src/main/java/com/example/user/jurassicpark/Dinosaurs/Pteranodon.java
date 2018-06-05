@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
-import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Pteranodon extends Dinosaur implements IFly{
     private int rampagePower;

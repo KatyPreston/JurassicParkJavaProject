@@ -56,18 +56,12 @@ public class MosasaurusTest {
 
     @Test
     public void canRampage(){
-        ArrayList<ISwim> dinosaurs = new ArrayList<>();
-        Lagoon lagoon= new Lagoon(PaddockType.LAGOON, dinosaurs);
-
-        assertEquals(true, mosasaurus.rampage(lagoon));
+        assertEquals(true, mosasaurus.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
         Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Elvis", 4);
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(false, mosasaurus2.rampage(cloudForest));
+        assertEquals(false, mosasaurus2.rampage());
     }
 }

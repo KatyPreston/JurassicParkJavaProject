@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
-import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Velociraptor extends Dinosaur implements IWalk{
     private int rampagePower;

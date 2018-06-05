@@ -57,19 +57,13 @@ public class TRexTest {
 
     @Test
     public void canRampage(){
-        ArrayList<TRex> dinosaurs = new ArrayList<>();
-        TRexPaddock tRexPaddock= new TRexPaddock(PaddockType.TREX_PADDOCK, dinosaurs);
-
-        assertEquals(true, tRex.rampage(tRexPaddock));
+        assertEquals(true, tRex.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
         TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Spikes", 3);
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(false, tRex2.rampage(cloudForest));
+        assertEquals(false, tRex2.rampage());
     }
 
 

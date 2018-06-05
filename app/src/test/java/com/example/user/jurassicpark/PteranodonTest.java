@@ -1,20 +1,11 @@
 package com.example.user.jurassicpark;
 
-import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
-import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
-import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
-import com.example.user.jurassicpark.Paddocks.Aviary;
-import com.example.user.jurassicpark.Paddocks.CloudForest;
-import com.example.user.jurassicpark.Paddocks.Lagoon;
-import com.example.user.jurassicpark.Paddocks.PaddockType;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -60,18 +51,12 @@ public class PteranodonTest {
     @Test
     public void canRampage(){
         Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Fiona", 9);
-        ArrayList<IFly> dinosaurs = new ArrayList<>();
-        Aviary aviary= new Aviary(PaddockType.AVIARY, dinosaurs);
-
-        assertEquals(true, pteranodon2.rampage(aviary));
+        assertEquals(true, pteranodon2.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(false, pteranodon.rampage(cloudForest));
+        assertEquals(false, pteranodon.rampage());
     }
 
 

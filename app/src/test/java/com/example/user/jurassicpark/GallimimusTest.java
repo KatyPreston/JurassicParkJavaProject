@@ -55,17 +55,11 @@ public class GallimimusTest {
     @Test
     public void canRampage(){
         Gallimimus gallimimus2 = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Eugene", 8);
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(true, gallimimus2.rampage(cloudForest));
+        assertEquals(true, gallimimus2.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry() {
-        ArrayList<IWalk> dinosaurs = new ArrayList<>();
-        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
-
-        assertEquals(false, gallimimus.rampage(cloudForest));
+        assertEquals(false, gallimimus.rampage());
     }
 }

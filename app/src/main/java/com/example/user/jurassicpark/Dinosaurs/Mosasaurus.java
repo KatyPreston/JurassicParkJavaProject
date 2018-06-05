@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
-import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Mosasaurus extends Dinosaur implements ISwim {
     private int rampagePower;

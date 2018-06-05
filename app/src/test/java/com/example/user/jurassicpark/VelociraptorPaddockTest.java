@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;

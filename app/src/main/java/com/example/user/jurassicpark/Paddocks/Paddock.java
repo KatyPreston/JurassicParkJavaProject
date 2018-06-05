@@ -31,13 +31,13 @@ public abstract class Paddock {
     }
 
     public void dinosaurHitBoundary(Dinosaur dinosaur){
-        if(dinosaur.rampage(this) == true)
+        if(dinosaur.rampage() == true)
         this.boundaryHealth -= dinosaur.getRampagePower();
     }
 
 
     public String dinosaurEscapes(Dinosaur dinosaur){
-        if (dinosaur.rampage(this) == true)
+        if (dinosaur.rampage() == true)
         while(this.boundaryHealth > 0){
         dinosaurHitBoundary(dinosaur);
         }
