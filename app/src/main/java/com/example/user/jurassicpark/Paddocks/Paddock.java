@@ -17,6 +17,9 @@ public abstract class Paddock {
     }
 
     public int getBoundaryHealth(){
+        if(this.boundaryHealth < 0){
+            this.boundaryHealth = 0;
+        }
         return this.boundaryHealth;
     }
 

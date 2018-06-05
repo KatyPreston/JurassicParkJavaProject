@@ -44,6 +44,15 @@ public class CloudForestTest {
     }
 
     @Test
+    public void boundaryHealthCannotGoBelowZero(){
+        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Monty", 8);
+        ankylosaurus2.rampage(cloudForest);
+        ankylosaurus2.rampage(cloudForest);
+        ankylosaurus2.rampage(cloudForest);
+        assertEquals(0, cloudForest.getBoundaryHealth());
+    }
+
+    @Test
     public void canCountDinosaurs(){
         assertEquals(2, cloudForest.dinosaurCount());
     }
