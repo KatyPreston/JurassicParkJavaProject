@@ -42,6 +42,12 @@ public class AnkylosaurusTest {
     }
 
     @Test
+    public void hungerLevelCannotBeLessThanZero(){
+        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Debby", -2);
+        assertEquals(0, ankylosaurus2.getHungerLevel());
+    }
+
+    @Test
     public void canGetRampagePower(){
         assertEquals(40, ankylosaurus.getRampagePower());
     }

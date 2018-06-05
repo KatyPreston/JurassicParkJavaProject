@@ -28,6 +28,9 @@ public abstract class Dinosaur {
     }
 
     public int getHungerLevel(){
+        if(this.hungerLevel < 0){
+            this.hungerLevel = 0;
+        }
         return this.hungerLevel;
     }
 
