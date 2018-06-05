@@ -15,11 +15,5 @@ public class Mosasaurus extends Dinosaur implements ISwim {
         return this.rampagePower;
     }
 
-    public String rampage(Paddock paddock) {
-        if (this.getHungerLevel() >= 6) {
-            paddock.dinosaurRampage(this);
-            return "Blop Bubble Splash";
-        } else
-            return "Gurgle";
-    }
+
 }

@@ -61,8 +61,7 @@ public class VelociraptorTest {
         ArrayList<Velociraptor> dinosaurs = new ArrayList<>();
         VelociraptorPaddock velociraptorPaddock= new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
 
-        assertEquals("Squawk Grrr", velociraptor2.rampage(velociraptorPaddock));
-        assertEquals(70, velociraptorPaddock.getBoundaryHealth());
+        assertEquals(true, velociraptor2.rampage(velociraptorPaddock));
     }
 
     @Test
@@ -70,8 +69,7 @@ public class VelociraptorTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Snort", velociraptor.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, velociraptor.rampage(cloudForest));
     }
 
 }

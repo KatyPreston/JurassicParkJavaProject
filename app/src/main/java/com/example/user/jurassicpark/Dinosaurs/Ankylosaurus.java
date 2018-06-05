@@ -15,12 +15,12 @@ public class Ankylosaurus extends Dinosaur implements IWalk{
         return this.rampagePower;
     }
 
-    public String rampage(Paddock paddock){
-        if(this.getHungerLevel() >= 6){
-        paddock.dinosaurRampage(this);
-        return "Crash Bang Wallop";
-        }
-        else
-            return "Rumble";
-    }
+
+
+//    public String escape(Paddock paddock){
+//        while(paddock.getBoundaryHealth() > 0){
+//            rampage(paddock);
+//        }
+//        return paddock.dinosaurEscapes(this);
+//    }
 }

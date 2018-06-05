@@ -59,8 +59,7 @@ public class MosasaurusTest {
         ArrayList<ISwim> dinosaurs = new ArrayList<>();
         Lagoon lagoon= new Lagoon(PaddockType.LAGOON, dinosaurs);
 
-        assertEquals("Blop Bubble Splash", mosasaurus.rampage(lagoon));
-        assertEquals(80, lagoon.getBoundaryHealth());
+        assertEquals(true, mosasaurus.rampage(lagoon));
     }
 
     @Test
@@ -69,7 +68,6 @@ public class MosasaurusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Gurgle", mosasaurus2.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, mosasaurus2.rampage(cloudForest));
     }
 }

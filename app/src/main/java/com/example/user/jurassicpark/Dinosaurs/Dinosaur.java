@@ -40,5 +40,10 @@ public abstract class Dinosaur {
 
     public abstract int getRampagePower();
 
-    public abstract String rampage(Paddock paddock);
+    public boolean rampage(Paddock paddock){
+        if(this.hungerLevel >= 6){
+            return true;
+        }
+        else return false;
+    }
 }

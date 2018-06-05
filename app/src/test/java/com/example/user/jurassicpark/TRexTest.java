@@ -60,8 +60,7 @@ public class TRexTest {
         ArrayList<TRex> dinosaurs = new ArrayList<>();
         TRexPaddock tRexPaddock= new TRexPaddock(PaddockType.TREX_PADDOCK, dinosaurs);
 
-        assertEquals("Grrr Rooaaar", tRex.rampage(tRexPaddock));
-        assertEquals(40, tRexPaddock.getBoundaryHealth());
+        assertEquals(true, tRex.rampage(tRexPaddock));
     }
 
     @Test
@@ -70,8 +69,7 @@ public class TRexTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Humph", tRex2.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, tRex2.rampage(cloudForest));
     }
 
 

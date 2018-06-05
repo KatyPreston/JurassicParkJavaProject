@@ -15,12 +15,5 @@ public class Brachiosaurus extends Dinosaur implements IWalk{
         return this.rampagePower;
     }
 
-    public String rampage(Paddock paddock) {
-        if (this.getHungerLevel() >= 6) {
-            paddock.dinosaurRampage(this);
-            return "Stomp Stomp";
-        }
-        else
-            return "Chomp Chomp";
-    }
+
 }

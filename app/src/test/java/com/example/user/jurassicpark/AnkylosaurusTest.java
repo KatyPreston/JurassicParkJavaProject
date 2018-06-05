@@ -64,8 +64,7 @@ public class AnkylosaurusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Crash Bang Wallop", ankylosaurus2.rampage(cloudForest));
-        assertEquals(60, cloudForest.getBoundaryHealth());
+        assertEquals(true, ankylosaurus2.rampage(cloudForest));
 
     }
 
@@ -74,8 +73,25 @@ public class AnkylosaurusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Rumble", ankylosaurus.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
-
+        assertEquals(false, ankylosaurus.rampage(cloudForest));
     }
+
+//    @Test
+//    public void dinosaurCanEscapeAfterRampage(){
+//        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+//        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+//        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Lucy", 8);
+//
+//        assertEquals("Run for your lives!!", ankylosaurus2.escape(cloudForest));
+//        assertEquals(0, cloudForest.getBoundaryHealth());
+//    }
+
+//    @Test
+//    public void dinosaurWillNotAttemptEscapeIfNotHungry(){
+//        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+//        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+//
+//        ankylosaurus.escape(cloudForest);
+//        assertEquals(100, cloudForest.getBoundaryHealth());
+//    }
 }

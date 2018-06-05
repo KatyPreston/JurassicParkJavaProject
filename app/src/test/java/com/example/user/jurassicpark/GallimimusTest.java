@@ -58,8 +58,7 @@ public class GallimimusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Zip Smash", gallimimus2.rampage(cloudForest));
-        assertEquals(80, cloudForest.getBoundaryHealth());
+        assertEquals(true, gallimimus2.rampage(cloudForest));
     }
 
     @Test
@@ -67,7 +66,6 @@ public class GallimimusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Zoop", gallimimus.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, gallimimus.rampage(cloudForest));
     }
 }

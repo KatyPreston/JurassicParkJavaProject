@@ -63,8 +63,7 @@ public class PteranodonTest {
         ArrayList<IFly> dinosaurs = new ArrayList<>();
         Aviary aviary= new Aviary(PaddockType.AVIARY, dinosaurs);
 
-        assertEquals("Swoosh Caaawww", pteranodon2.rampage(aviary));
-        assertEquals(50, aviary.getBoundaryHealth());
+        assertEquals(true, pteranodon2.rampage(aviary));
     }
 
     @Test
@@ -72,7 +71,6 @@ public class PteranodonTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Swoop", pteranodon.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, pteranodon.rampage(cloudForest));
     }
 }

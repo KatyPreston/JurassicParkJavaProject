@@ -35,5 +35,11 @@ public abstract class Paddock {
     }
 
 
+    public String dinosaurEscapes(Dinosaur dinosaur){
+        if(this.boundaryHealth == 0);
+        return "Run for your lives!!";
+    }
+
+
 
 }

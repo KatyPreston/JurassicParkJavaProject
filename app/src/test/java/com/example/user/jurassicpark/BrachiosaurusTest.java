@@ -59,8 +59,7 @@ public class BrachiosaurusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Stomp Stomp", brachiosaurus2.rampage(cloudForest));
-        assertEquals(30, cloudForest.getBoundaryHealth());
+        assertEquals(true, brachiosaurus2.rampage(cloudForest));
     }
 
     @Test
@@ -68,7 +67,6 @@ public class BrachiosaurusTest {
         ArrayList<IWalk> dinosaurs = new ArrayList<>();
         CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
 
-        assertEquals("Chomp Chomp", brachiosaurus.rampage(cloudForest));
-        assertEquals(100, cloudForest.getBoundaryHealth());
+        assertEquals(false, brachiosaurus.rampage(cloudForest));
     }
 }
