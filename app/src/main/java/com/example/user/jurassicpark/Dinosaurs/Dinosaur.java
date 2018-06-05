@@ -1,6 +1,6 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
-public class Dinosaur {
+public abstract class Dinosaur {
     private FeedType feedType;
     private String type;
     private String name;
@@ -32,4 +32,6 @@ public class Dinosaur {
     public void eat(){
         this.hungerLevel = 1;
     }
+
+    public abstract int getRampagePower();
 }

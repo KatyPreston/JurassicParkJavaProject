@@ -27,6 +27,10 @@ public abstract class Paddock {
         return "Mmmm";
     }
 
+    public void dinosaurRampage(Dinosaur dinosaur){
+        this.boundaryHealth -= dinosaur.getRampagePower();
+    }
+
 
 
 }
