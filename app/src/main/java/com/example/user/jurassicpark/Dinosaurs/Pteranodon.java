@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
+import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Pteranodon extends Dinosaur implements IFly{
     private int rampagePower;
@@ -12,5 +13,10 @@ public class Pteranodon extends Dinosaur implements IFly{
 
     public int getRampagePower(){
         return this.rampagePower;
+    }
+
+    public String rampage(Paddock paddock){
+        paddock.dinosaurRampage(this);
+        return "Swoosh Caaawww";
     }
 }

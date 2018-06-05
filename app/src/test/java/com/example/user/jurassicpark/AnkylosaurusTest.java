@@ -1,10 +1,15 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Paddocks.CloudForest;
+import com.example.user.jurassicpark.Paddocks.PaddockType;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -45,5 +50,15 @@ public class AnkylosaurusTest {
     public void canEat(){
         ankylosaurus.eat();
         assertEquals(1, ankylosaurus.getHungerLevel());
+    }
+
+    @Test
+    public void canRampage(){
+        ArrayList<IWalk> dinosaurs = new ArrayList<>();
+        CloudForest cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurs);
+
+        assertEquals("Crash Bang Wallop", ankylosaurus.rampage(cloudForest));
+        assertEquals(60, cloudForest.getBoundaryHealth());
+
     }
 }

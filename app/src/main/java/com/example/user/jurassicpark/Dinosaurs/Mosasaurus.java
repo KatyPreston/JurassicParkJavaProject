@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
+import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Mosasaurus extends Dinosaur implements ISwim {
     private int rampagePower;
@@ -12,5 +13,10 @@ public class Mosasaurus extends Dinosaur implements ISwim {
 
     public int getRampagePower(){
         return this.rampagePower;
+    }
+
+    public String rampage(Paddock paddock){
+        paddock.dinosaurRampage(this);
+        return "Blop Bubble Splash";
     }
 }

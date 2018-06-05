@@ -1,10 +1,12 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.CloudForest;
+import com.example.user.jurassicpark.Paddocks.Lagoon;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.ThunderValley;
 
@@ -88,4 +90,6 @@ public class ThunderValleyTest {
         thunderValley.dinosaurRampage(brachiosaurus);
         assertEquals(30, thunderValley.getBoundaryHealth());
     }
+
+
 }

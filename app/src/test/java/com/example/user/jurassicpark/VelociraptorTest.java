@@ -1,10 +1,16 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
+import com.example.user.jurassicpark.Paddocks.PaddockType;
+import com.example.user.jurassicpark.Paddocks.TRexPaddock;
+import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -45,6 +51,16 @@ public class VelociraptorTest {
     public void canEat(){
         velociraptor.eat();
         assertEquals(1, velociraptor.getHungerLevel());
+    }
+
+    @Test
+    public void canRampage(){
+        ArrayList<Velociraptor> dinosaurs = new ArrayList<>();
+        VelociraptorPaddock velociraptorPaddock= new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
+
+        assertEquals("Squawk Grrr", velociraptor.rampage(velociraptorPaddock));
+        assertEquals(70, velociraptorPaddock.getBoundaryHealth());
+
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
+import com.example.user.jurassicpark.Paddocks.Paddock;
 
 public class Brachiosaurus extends Dinosaur implements IWalk{
     private int rampagePower;
@@ -12,5 +13,10 @@ public class Brachiosaurus extends Dinosaur implements IWalk{
 
     public int getRampagePower(){
         return this.rampagePower;
+    }
+
+    public String rampage(Paddock paddock){
+        paddock.dinosaurRampage(this);
+        return "Stomp Stomp";
     }
 }
