@@ -105,7 +105,6 @@ public class CloudForestTest {
     @Test
     public void dinosaurCanEscape(){
         Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Lucy", 8);
-//        cloudForest.dinosaurHitBoundary(ankylosaurus2);
         assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(ankylosaurus2));
         assertEquals(0, cloudForest.getBoundaryHealth());
     }

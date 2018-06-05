@@ -4,6 +4,7 @@ import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.Lagoon;
@@ -90,6 +91,20 @@ public class ThunderValleyTest {
         thunderValley.dinosaurHitBoundary(brachiosaurus);
         assertEquals(30, thunderValley.getBoundaryHealth());
     }
+
+    @Test
+    public void dinosaurCanEscape(){
+        assertEquals("Run for your lives!!", thunderValley.dinosaurEscapes(brachiosaurus));
+        assertEquals(0, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        Brachiosaurus brachiosaurus2 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Stella", 1);
+        thunderValley.dinosaurEscapes(brachiosaurus2);
+        assertEquals(100, thunderValley.getBoundaryHealth());
+    }
+
 
 
 }

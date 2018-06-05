@@ -1,5 +1,6 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
@@ -64,5 +65,18 @@ public class TRexPaddockTest {
         TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Arty", 7);
         tRexPaddock.dinosaurHitBoundary(tRex2);
         assertEquals(40, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCanEscape(){
+        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Arty", 7);
+        assertEquals("Run for your lives!!", tRexPaddock.dinosaurEscapes(tRex2));
+        assertEquals(0, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        tRexPaddock.dinosaurEscapes(tRex);
+        assertEquals(100, tRexPaddock.getBoundaryHealth());
     }
 }

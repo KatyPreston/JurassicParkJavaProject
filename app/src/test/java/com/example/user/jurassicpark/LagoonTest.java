@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
+import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Paddocks.Lagoon;
@@ -66,5 +67,19 @@ public class LagoonTest {
         lagoon.dinosaurHitBoundary(mosasaurus2);
         assertEquals(80, lagoon.getBoundaryHealth());
     }
+
+    @Test
+    public void dinosaurCanEscape(){
+        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Mark", 8);
+        assertEquals("Run for your lives!!", lagoon.dinosaurEscapes(mosasaurus2));
+        assertEquals(0, lagoon.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        lagoon.dinosaurEscapes(mosasaurus);
+        assertEquals(100, lagoon.getBoundaryHealth());
+    }
+
 
 }

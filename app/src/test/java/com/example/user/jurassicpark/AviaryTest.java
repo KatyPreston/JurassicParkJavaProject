@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
+import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 import com.example.user.jurassicpark.Paddocks.Aviary;
@@ -66,5 +67,19 @@ public class AviaryTest {
         aviary.dinosaurHitBoundary(pteranodon2);
         assertEquals(50, aviary.getBoundaryHealth());
     }
+
+    @Test
+    public void dinosaurCanEscape(){
+        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Bonkers", 8);
+        assertEquals("Run for your lives!!", aviary.dinosaurEscapes(pteranodon2));
+        assertEquals(0, aviary.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        aviary.dinosaurEscapes(pteranodon);
+        assertEquals(100, aviary.getBoundaryHealth());
+    }
+
 
 }
