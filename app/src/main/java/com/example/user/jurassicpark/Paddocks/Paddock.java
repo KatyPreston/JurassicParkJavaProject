@@ -37,11 +37,10 @@ public abstract class Paddock {
 
 
     public String dinosaurEscapes(Dinosaur dinosaur){
-        if (dinosaur.rampage(this) == true){
+        if (dinosaur.rampage(this) == true)
         while(this.boundaryHealth > 0){
         dinosaurHitBoundary(dinosaur);
         }
-    }
         return "Run for your lives!!";
     }
 
