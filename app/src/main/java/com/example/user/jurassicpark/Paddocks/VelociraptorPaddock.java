@@ -23,4 +23,12 @@ public class VelociraptorPaddock extends Paddock {
     public void removeDinosaur(Velociraptor dinosaur){
         this.dinosaurList.remove(dinosaur);
     }
+
+    public ArrayList getDinosaurs(){
+        return this.dinosaurList;
+    }
+
+    public void emptyPaddock(){
+        this.dinosaurList.clear();
+    }
 }

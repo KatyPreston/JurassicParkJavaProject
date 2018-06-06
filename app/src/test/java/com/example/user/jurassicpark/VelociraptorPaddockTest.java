@@ -107,5 +107,16 @@ public class VelociraptorPaddockTest {
         assertEquals(100, velociraptorPaddock.getBoundaryHealth());
     }
 
+    @Test
+    public void canGetDinosaurs(){
+        assertEquals(dinosaurList, velociraptorPaddock.getDinosaurs());
+    }
+
+    @Test
+    public void canEmptyPaddock(){
+        velociraptorPaddock.emptyPaddock();
+        assertEquals(0, velociraptorPaddock.dinosaurCount());
+    }
+
 
 }

@@ -78,4 +78,42 @@ public class VelociraptorTest {
         assertEquals(false, spyVelociraptor.rampage());
     }
 
+    @Test
+    public void velociraptorCanCallForBackup(){
+        ArrayList<Velociraptor> dinosaurs = new ArrayList<>();
+        Velociraptor velociraptor1 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue");
+        dinosaurs.add(velociraptor1);
+        dinosaurs.add(velociraptor);
+        VelociraptorPaddock paddock = new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
+
+        velociraptor.callForBackup(paddock);
+        assertEquals(60, velociraptor.getRampagePower());
+    }
+
+    @Test
+    public void velociraptorCannotGetMoreBackupThanDinosaursInPaddock() {
+        ArrayList<Velociraptor> dinosaurs = new ArrayList<>();
+        Velociraptor velociraptor1 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue");
+        dinosaurs.add(velociraptor);
+        dinosaurs.add(velociraptor1);
+        VelociraptorPaddock paddock = new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
+
+        velociraptor.callForBackup(paddock);
+        velociraptor.callForBackup(paddock);
+
+        assertEquals(60, velociraptor.getRampagePower());
+    }
+
+    @Test
+    public void cannotGetBackupIfNotInPack(){
+        ArrayList<Velociraptor> dinosaurs = new ArrayList<>();
+        Velociraptor velociraptor1 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue");
+        dinosaurs.add(velociraptor1);
+        VelociraptorPaddock paddock = new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
+
+        velociraptor.callForBackup(paddock);
+        assertEquals(30, velociraptor.getRampagePower());
+    }
+
+
 }
