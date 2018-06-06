@@ -3,6 +3,7 @@ package com.example.user.jurassicpark;
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
+import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.Aviary;
 import com.example.user.jurassicpark.Paddocks.Paddock;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
@@ -11,6 +12,7 @@ import com.example.user.jurassicpark.Visitors.Visitor;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -99,6 +101,19 @@ public class ParkTest {
         assertEquals(50, park.totalRevenue(), 0.1);
         assertEquals(50, visitor.getWallet(), 0.1);
         assertEquals(1, park.visitorCount());
+    }
+
+    @Test
+    public void canRepairPaddockBoundary(){
+        TRex tRex = new TRex(FeedType.CARNIVORE, "TRex", "Sly");
+        TRex spyTRex = Mockito.spy(tRex);
+
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(8);
+        aviary.dinosaurHitBoundary(spyTRex);
+        assertEquals(40, aviary.getBoundaryHealth());
+        park.repairPaddock(aviary);
+        assertEquals(100, aviary.getBoundaryHealth());
+        assertEquals(-50, park.totalRevenue(), 0.1);
     }
 
 }
