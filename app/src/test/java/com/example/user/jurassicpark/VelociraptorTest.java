@@ -1,11 +1,7 @@
 package com.example.user.jurassicpark;
 
-import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
-import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
-import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
@@ -98,6 +94,7 @@ public class VelociraptorTest {
         dinosaurs.add(velociraptor1);
         VelociraptorPaddock paddock = new VelociraptorPaddock(PaddockType.VELOCIRAPTOR_PADDOCK, dinosaurs);
 
+        velociraptor.callForBackup(paddock);
         velociraptor.callForBackup(paddock);
         velociraptor.callForBackup(paddock);
 

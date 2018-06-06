@@ -1,7 +1,6 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
-import com.example.user.jurassicpark.Paddocks.Paddock;
 import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
 public class Velociraptor extends Dinosaur implements IWalk{
@@ -21,7 +20,7 @@ public class Velociraptor extends Dinosaur implements IWalk{
         int dinosaurs = paddock.getDinosaurs().size() - 1;
         int power = this.rampagePower * dinosaurs;
         this.rampagePower += power;
-        paddock.emptyPaddock();}
+        paddock.emptyPaddock(); }
     }
 
 }

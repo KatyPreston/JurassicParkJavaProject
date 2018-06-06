@@ -1,13 +1,8 @@
 package com.example.user.jurassicpark;
 
-import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
-import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Paddocks.CloudForest;
-import com.example.user.jurassicpark.Paddocks.PaddockType;
 import org.mockito.*;
-import static org.mockito.Mockito.*;
 
 
 import org.junit.Before;

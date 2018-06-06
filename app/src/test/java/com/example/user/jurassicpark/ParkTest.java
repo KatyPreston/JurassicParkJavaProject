@@ -2,7 +2,6 @@ package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
-import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.Aviary;
 import com.example.user.jurassicpark.Paddocks.Paddock;
