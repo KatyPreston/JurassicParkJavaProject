@@ -68,7 +68,7 @@ public class TRexTest {
         TRex tRex1 = new TRex(FeedType.CARNIVORE, "TRex", "Ned");
         TRex spyTRex = Mockito.spy(tRex1);
 
-        Mockito.when(spyTRex.rampage()).thenReturn(true);
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyTRex.rampage());
     }
 
@@ -77,7 +77,7 @@ public class TRexTest {
         TRex tRex1 = new TRex(FeedType.CARNIVORE, "TRex", "Ned");
         TRex spyTRex = Mockito.spy(tRex1);
 
-        Mockito.when(spyTRex.rampage()).thenReturn(false);
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyTRex.rampage());
     }
 

@@ -39,7 +39,7 @@ public abstract class Dinosaur {
     public abstract int getRampagePower();
 
     public boolean rampage(){
-        if(this.hungerLevel >= 6){
+        if(this.getHungerLevel() >= 6){
             return true;
         }
         else return false;

@@ -65,7 +65,7 @@ public class VelociraptorTest {
         Velociraptor velociraptor1 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Purple");
         Velociraptor spyVelociraptor = Mockito.spy(velociraptor1);
 
-        Mockito.when(spyVelociraptor.rampage()).thenReturn(true);
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(8);
         assertEquals(true, spyVelociraptor.rampage());
     }
 
@@ -74,7 +74,7 @@ public class VelociraptorTest {
         Velociraptor velociraptor1 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Purple");
         Velociraptor spyVelociraptor = Mockito.spy(velociraptor1);
 
-        Mockito.when(spyVelociraptor.rampage()).thenReturn(false);
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(3);
         assertEquals(false, spyVelociraptor.rampage());
     }
 

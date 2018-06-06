@@ -61,21 +61,18 @@ public class AnkylosaurusTest {
 
     @Test
     public void canRampage(){
-        Ankylosaurus ankylosaurus1 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Bert");
-        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus1);
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
 
-        Mockito.when(spyAnkylosaurus.rampage()).thenReturn(true);
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyAnkylosaurus.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
-        Ankylosaurus ankylosaurus1 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Bert");
-        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus1);
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
 
-        Mockito.when(spyAnkylosaurus.rampage()).thenReturn(false);
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyAnkylosaurus.rampage());
     }
-
 
 }

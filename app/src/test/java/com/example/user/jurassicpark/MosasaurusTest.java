@@ -67,7 +67,7 @@ public class MosasaurusTest {
         Mosasaurus mosasaurus1 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Gerald");
         Mosasaurus spyMosasaurus = Mockito.spy(mosasaurus1);
 
-        Mockito.when(spyMosasaurus.rampage()).thenReturn(true);
+        Mockito.when(spyMosasaurus.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyMosasaurus.rampage());
     }
 
@@ -76,7 +76,7 @@ public class MosasaurusTest {
         Mosasaurus mosasaurus1 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Gerald");
         Mosasaurus spyMosasaurus = Mockito.spy(mosasaurus1);
 
-        Mockito.when(spyMosasaurus.rampage()).thenReturn(false);
+        Mockito.when(spyMosasaurus.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyMosasaurus.rampage());
     }
 

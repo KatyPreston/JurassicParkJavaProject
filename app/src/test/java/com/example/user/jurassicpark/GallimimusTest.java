@@ -1,6 +1,7 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
+import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Gallimimus;
@@ -61,19 +62,17 @@ public class GallimimusTest {
 
     @Test
     public void canRampage(){
-        Gallimimus gallimimus1 = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Max");
-        Gallimimus spyGallimimus = Mockito.spy(gallimimus1);
+        Gallimimus spyGallimimus = Mockito.spy(gallimimus);
 
-        Mockito.when(spyGallimimus.rampage()).thenReturn(true);
+        Mockito.when(spyGallimimus.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyGallimimus.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
-        Gallimimus gallimimus1 = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Max");
-        Gallimimus spyGallimimus = Mockito.spy(gallimimus1);
+        Gallimimus spyGallimimus = Mockito.spy(gallimimus);
 
-        Mockito.when(spyGallimimus.rampage()).thenReturn(false);
+        Mockito.when(spyGallimimus.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyGallimimus.rampage());
     }
 

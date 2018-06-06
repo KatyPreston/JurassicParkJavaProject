@@ -2,8 +2,10 @@ package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Ankylosaurus;
+import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
 import com.example.user.jurassicpark.Dinosaurs.Gallimimus;
+import com.example.user.jurassicpark.Dinosaurs.Pteranodon;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
@@ -11,6 +13,7 @@ import com.example.user.jurassicpark.Paddocks.ThunderValley;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -91,6 +94,49 @@ public class CloudForestTest {
         assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
         assertEquals(1, gallimimus.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanCauseDamage(){
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
+
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(8);
+        cloudForest.dinosaurHitBoundary(spyAnkylosaurus);
+        assertEquals(60, cloudForest.getBoundaryHealth());
+    }
+
+    @Test
+    public void boundaryHealthCannotGoBelowZero(){
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
+
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(8);
+        cloudForest.dinosaurHitBoundary(spyAnkylosaurus);
+        cloudForest.dinosaurHitBoundary(spyAnkylosaurus);
+        cloudForest.dinosaurHitBoundary(spyAnkylosaurus);
+
+        assertEquals(0, cloudForest.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCanEscape(){
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
+
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(8);
+        assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(spyAnkylosaurus));
+        assertEquals(0, cloudForest.getBoundaryHealth());
+    }
+
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        Ankylosaurus spyAnkylosaurus = Mockito.spy(ankylosaurus);
+
+        Mockito.when(spyAnkylosaurus.getHungerLevel()).thenReturn(5);
+        assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(spyAnkylosaurus));
+        assertEquals(100, cloudForest.getBoundaryHealth());
+    }
+
+
+
 
 
 }

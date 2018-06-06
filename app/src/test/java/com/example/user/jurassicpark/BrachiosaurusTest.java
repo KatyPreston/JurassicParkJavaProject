@@ -62,21 +62,17 @@ public class BrachiosaurusTest {
 
     @Test
     public void canRampage(){
-        Brachiosaurus brachiosaurus1 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "John");
-        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus1);
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
 
-
-        Mockito.when(spyBrachiosaurus.rampage()).thenReturn(true);
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyBrachiosaurus.rampage());
     }
 
     @Test
     public void willNotRampageUnlessHungry(){
-        Brachiosaurus brachiosaurus1 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "John");
-        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus1);
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
 
-
-        Mockito.when(spyBrachiosaurus.rampage()).thenReturn(false);
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyBrachiosaurus.rampage());
     }
 

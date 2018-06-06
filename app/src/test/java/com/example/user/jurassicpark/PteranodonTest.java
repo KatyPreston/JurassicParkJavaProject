@@ -61,7 +61,7 @@ public class PteranodonTest {
         Pteranodon pteranodon1 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Mitchell");
         Pteranodon spyPteranodon = Mockito.spy(pteranodon1);
 
-        Mockito.when(spyPteranodon.rampage()).thenReturn(true);
+        Mockito.when(spyPteranodon.getHungerLevel()).thenReturn(6);
         assertEquals(true, spyPteranodon.rampage());
     }
 
@@ -70,7 +70,7 @@ public class PteranodonTest {
         Pteranodon pteranodon1 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Mitchell");
         Pteranodon spyPteranodon = Mockito.spy(pteranodon1);
 
-        Mockito.when(spyPteranodon.rampage()).thenReturn(false);
+        Mockito.when(spyPteranodon.getHungerLevel()).thenReturn(1);
         assertEquals(false, spyPteranodon.rampage());
     }
 

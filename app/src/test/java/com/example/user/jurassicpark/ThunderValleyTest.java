@@ -3,6 +3,7 @@ package com.example.user.jurassicpark;
 import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Paddocks.CloudForest;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
@@ -10,6 +11,7 @@ import com.example.user.jurassicpark.Paddocks.ThunderValley;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -87,5 +89,43 @@ public class ThunderValleyTest {
         assertEquals("Mmmm", thunderValley.feedDinosaur(brachiosaurus));
         assertEquals(1, brachiosaurus.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanCauseDamage(){
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
+
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(8);
+        thunderValley.dinosaurHitBoundary(spyBrachiosaurus);
+        assertEquals(30, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
+    public void boundaryHealthCannotGoBelowZero(){
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
+
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(8);
+        thunderValley.dinosaurHitBoundary(spyBrachiosaurus);
+        thunderValley.dinosaurHitBoundary(spyBrachiosaurus);
+        assertEquals(0, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCanEscape(){
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
+
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(8);
+        assertEquals("Run for your lives!!", thunderValley.dinosaurEscapes(spyBrachiosaurus));
+        assertEquals(0, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        Brachiosaurus spyBrachiosaurus = Mockito.spy(brachiosaurus);
+
+        Mockito.when(spyBrachiosaurus.getHungerLevel()).thenReturn(4);
+        assertEquals("Run for your lives!!", thunderValley.dinosaurEscapes(spyBrachiosaurus));
+        assertEquals(100, thunderValley.getBoundaryHealth());
+    }
+
 
 }

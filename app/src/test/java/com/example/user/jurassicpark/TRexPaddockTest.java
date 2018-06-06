@@ -1,12 +1,16 @@
 package com.example.user.jurassicpark;
 
+import com.example.user.jurassicpark.Dinosaurs.Brachiosaurus;
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
 import com.example.user.jurassicpark.Dinosaurs.TRex;
+import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.TRexPaddock;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -63,4 +67,42 @@ public class TRexPaddockTest {
         assertEquals("Mmmm", tRexPaddock.feedDinosaur(tRex));
         assertEquals(1, tRex.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanCauseDamage(){
+        TRex spyTRex = Mockito.spy(tRex);
+
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(8);
+        tRexPaddock.dinosaurHitBoundary(spyTRex);
+        assertEquals(40, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void boundaryHealthCannotGoBelowZero(){
+        TRex spyTRex = Mockito.spy(tRex);
+
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(8);
+        tRexPaddock.dinosaurHitBoundary(spyTRex);
+        tRexPaddock.dinosaurHitBoundary(spyTRex);
+        assertEquals(0, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCanEscape(){
+        TRex spyTRex = Mockito.spy(tRex);
+
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(8);
+        assertEquals("Run for your lives!!", tRexPaddock.dinosaurEscapes(spyTRex));
+        assertEquals(0, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        TRex spyTRex = Mockito.spy(tRex);
+
+        Mockito.when(spyTRex.getHungerLevel()).thenReturn(2);
+        assertEquals("Run for your lives!!", tRexPaddock.dinosaurEscapes(spyTRex));
+        assertEquals(100, tRexPaddock.getBoundaryHealth());
+    }
+
 }

@@ -1,12 +1,15 @@
 package com.example.user.jurassicpark;
 
 import com.example.user.jurassicpark.Dinosaurs.FeedType;
+import com.example.user.jurassicpark.Dinosaurs.Mosasaurus;
+import com.example.user.jurassicpark.Dinosaurs.TRex;
 import com.example.user.jurassicpark.Dinosaurs.Velociraptor;
 import com.example.user.jurassicpark.Paddocks.PaddockType;
 import com.example.user.jurassicpark.Paddocks.VelociraptorPaddock;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -63,5 +66,46 @@ public class VelociraptorPaddockTest {
         assertEquals("Mmmm", velociraptorPaddock.feedDinosaur(velociraptor));
         assertEquals(1, velociraptor.getHungerLevel());
     }
+
+    @Test
+    public void dinosaurCanCauseDamage(){
+        Velociraptor spyVelociraptor = Mockito.spy(velociraptor);
+
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(8);
+        velociraptorPaddock.dinosaurHitBoundary(spyVelociraptor);
+        assertEquals(70, velociraptorPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void boundaryHealthCannotGoBelowZero(){
+        Velociraptor spyVelociraptor = Mockito.spy(velociraptor);
+
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(8);
+        velociraptorPaddock.dinosaurHitBoundary(spyVelociraptor);
+        velociraptorPaddock.dinosaurHitBoundary(spyVelociraptor);
+        velociraptorPaddock.dinosaurHitBoundary(spyVelociraptor);
+        velociraptorPaddock.dinosaurHitBoundary(spyVelociraptor);
+
+        assertEquals(0, velociraptorPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCanEscape(){
+        Velociraptor spyVelociraptor = Mockito.spy(velociraptor);
+
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(8);
+        assertEquals("Run for your lives!!", velociraptorPaddock.dinosaurEscapes(spyVelociraptor));
+        assertEquals(0, velociraptorPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void dinosaurCannotEscapeUnlessRampaging(){
+        Velociraptor spyVelociraptor = Mockito.spy(velociraptor);
+
+        Mockito.when(spyVelociraptor.getHungerLevel()).thenReturn(3);
+        assertEquals("Run for your lives!!", velociraptorPaddock.dinosaurEscapes(spyVelociraptor));
+        assertEquals(100, velociraptorPaddock.getBoundaryHealth());
+    }
+
 
 }
