@@ -14,7 +14,7 @@ public class PteranodonTest {
 
     @Before
     public void before(){
-        pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Elvis", 3);
+        pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Elvis");
     }
 
     @Test
@@ -33,11 +33,6 @@ public class PteranodonTest {
     }
 
     @Test
-    public void canGetHungerLevel(){
-        assertEquals(3, pteranodon.getHungerLevel());
-    }
-
-    @Test
     public void canGetRampagePower(){
         assertEquals(50, pteranodon.getRampagePower());
     }
@@ -47,17 +42,5 @@ public class PteranodonTest {
         pteranodon.eat();
         assertEquals(1, pteranodon.getHungerLevel());
     }
-
-    @Test
-    public void canRampage(){
-        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Fiona", 9);
-        assertEquals(true, pteranodon2.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry(){
-        assertEquals(false, pteranodon.rampage());
-    }
-
 
 }

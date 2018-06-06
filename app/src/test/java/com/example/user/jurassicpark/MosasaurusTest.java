@@ -20,7 +20,7 @@ public class MosasaurusTest {
 
     @Before
     public void before(){
-        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon", 10);
+        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon");
     }
 
     @Test
@@ -38,10 +38,6 @@ public class MosasaurusTest {
         assertEquals("Simon", mosasaurus.getName());
     }
 
-    @Test
-    public void canGetHungerLevel(){
-        assertEquals(10, mosasaurus.getHungerLevel());
-    }
 
     @Test
     public void canGetRampagePower(){
@@ -54,14 +50,4 @@ public class MosasaurusTest {
         assertEquals(1, mosasaurus.getHungerLevel());
     }
 
-    @Test
-    public void canRampage(){
-        assertEquals(true, mosasaurus.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry(){
-        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Elvis", 4);
-        assertEquals(false, mosasaurus2.rampage());
-    }
 }

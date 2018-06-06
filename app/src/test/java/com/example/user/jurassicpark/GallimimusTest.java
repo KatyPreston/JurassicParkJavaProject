@@ -18,7 +18,7 @@ public class GallimimusTest {
 
     @Before
     public void before(){
-        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Fergus", 5);
+        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Fergus");
     }
 
     @Test
@@ -27,18 +27,13 @@ public class GallimimusTest {
     }
 
     @Test
-    public void canGeType(){
+    public void canGetType(){
         assertEquals("Gallimimus", gallimimus.getType());
     }
 
     @Test
     public void canGetName(){
         assertEquals("Fergus", gallimimus.getName());
-    }
-
-    @Test
-    public void canGetHungerLevel(){
-        assertEquals(5, gallimimus.getHungerLevel());
     }
 
     @Test
@@ -52,14 +47,4 @@ public class GallimimusTest {
         assertEquals(1, gallimimus.getHungerLevel());
     }
 
-    @Test
-    public void canRampage(){
-        Gallimimus gallimimus2 = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Eugene", 8);
-        assertEquals(true, gallimimus2.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry() {
-        assertEquals(false, gallimimus.rampage());
-    }
 }

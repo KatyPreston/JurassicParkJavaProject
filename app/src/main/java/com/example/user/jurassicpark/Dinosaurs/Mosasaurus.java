@@ -5,8 +5,8 @@ import com.example.user.jurassicpark.DinosaurBehaviour.ISwim;
 public class Mosasaurus extends Dinosaur implements ISwim {
     private int rampagePower;
 
-    public Mosasaurus(FeedType feedType, String type, String name, int hungerLevel){
-        super(feedType, type, name, hungerLevel);
+    public Mosasaurus(FeedType feedType, String type, String name){
+        super(feedType, type, name);
         this.rampagePower = 20;
     }
 

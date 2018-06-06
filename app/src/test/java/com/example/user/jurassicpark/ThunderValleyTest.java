@@ -22,7 +22,7 @@ public class ThunderValleyTest {
 
     @Before
     public void before(){
-        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Cecilia", 7);
+        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Cecilia");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(brachiosaurus);
 
@@ -37,6 +37,11 @@ public class ThunderValleyTest {
     @Test
     public void canGetBoundaryHealth(){
         assertEquals(100, thunderValley.getBoundaryHealth());
+    }
+
+    @Test
+    public void canSetBoundaryHealth(){
+        assertEquals(40, thunderValley.setBoundaryHealth(40));
     }
 
     @Test
@@ -70,7 +75,7 @@ public class ThunderValleyTest {
     public void cannotTransferCarnivore(){
         ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
         CloudForest  cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws", 7);
+        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
 
         thunderValley.transferHerbivore(tRex, cloudForest);
         assertEquals(1, thunderValley.dinosaurCount());
@@ -82,26 +87,5 @@ public class ThunderValleyTest {
         assertEquals("Mmmm", thunderValley.feedDinosaur(brachiosaurus));
         assertEquals(1, brachiosaurus.getHungerLevel());
     }
-
-    @Test
-    public void dinosaurCanRampage(){
-        thunderValley.dinosaurHitBoundary(brachiosaurus);
-        assertEquals(30, thunderValley.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        assertEquals("Run for your lives!!", thunderValley.dinosaurEscapes(brachiosaurus));
-        assertEquals(0, thunderValley.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        Brachiosaurus brachiosaurus2 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Stella", 1);
-        thunderValley.dinosaurEscapes(brachiosaurus2);
-        assertEquals(100, thunderValley.getBoundaryHealth());
-    }
-
-
 
 }

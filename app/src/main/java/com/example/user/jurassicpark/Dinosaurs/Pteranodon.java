@@ -5,8 +5,8 @@ import com.example.user.jurassicpark.DinosaurBehaviour.IFly;
 public class Pteranodon extends Dinosaur implements IFly{
     private int rampagePower;
 
-    public Pteranodon(FeedType feedType, String type, String name, int hungerLevel){
-        super(feedType, type, name, hungerLevel);
+    public Pteranodon(FeedType feedType, String type, String name){
+        super(feedType, type, name);
         this.rampagePower = 50;
     }
 

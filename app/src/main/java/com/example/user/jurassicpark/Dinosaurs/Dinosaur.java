@@ -1,16 +1,19 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
+import java.util.Random;
+
 public abstract class Dinosaur {
     private FeedType feedType;
     private String type;
     private String name;
     private int hungerLevel;
 
-    public Dinosaur(FeedType feedType, String type, String name, int hungerLevel){
+    public Dinosaur(FeedType feedType, String type, String name){
         this.feedType = feedType;
         this.type = type;
         this.name = name;
-        this.hungerLevel = hungerLevel;
+        Random rand = new Random();
+        this.hungerLevel = rand.nextInt(10) + 1;
     }
 
     public FeedType getFeedType(){

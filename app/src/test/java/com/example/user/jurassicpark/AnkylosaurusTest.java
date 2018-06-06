@@ -18,7 +18,7 @@ public class AnkylosaurusTest {
 
     @Before
     public void before() {
-        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Stompy", 1);
+        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Stompy");
     }
 
     @Test
@@ -37,17 +37,6 @@ public class AnkylosaurusTest {
     }
 
     @Test
-    public void canGetHungerLevel() {
-        assertEquals(1, ankylosaurus.getHungerLevel());
-    }
-
-    @Test
-    public void hungerLevelCannotBeLessThanZero() {
-        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Debby", -2);
-        assertEquals(0, ankylosaurus2.getHungerLevel());
-    }
-
-    @Test
     public void canGetRampagePower() {
         assertEquals(40, ankylosaurus.getRampagePower());
     }
@@ -56,18 +45,6 @@ public class AnkylosaurusTest {
     public void canEat() {
         ankylosaurus.eat();
         assertEquals(1, ankylosaurus.getHungerLevel());
-    }
-
-    @Test
-    public void canRampage() {
-        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Russel", 7);
-        assertEquals(true, ankylosaurus2.rampage());
-
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry() {
-        assertEquals(false, ankylosaurus.rampage());
     }
 
 }

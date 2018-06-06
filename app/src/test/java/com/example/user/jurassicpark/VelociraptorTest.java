@@ -19,7 +19,7 @@ public class VelociraptorTest {
 
     @Before
     public void before(){
-        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue", 2);
+        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Blue");
     }
 
     @Test
@@ -38,11 +38,6 @@ public class VelociraptorTest {
     }
 
     @Test
-    public void canGetHungerLevel(){
-        assertEquals(2, velociraptor.getHungerLevel());
-    }
-
-    @Test
     public void canGetRampagePower(){
         assertEquals(30, velociraptor.getRampagePower());
     }
@@ -51,17 +46,6 @@ public class VelociraptorTest {
     public void canEat(){
         velociraptor.eat();
         assertEquals(1, velociraptor.getHungerLevel());
-    }
-
-    @Test
-    public void canRampage(){
-        Velociraptor velociraptor2 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Red", 10);
-        assertEquals(true, velociraptor2.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry(){
-        assertEquals(false, velociraptor.rampage());
     }
 
 }

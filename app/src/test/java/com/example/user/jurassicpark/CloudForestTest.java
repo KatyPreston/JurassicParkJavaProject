@@ -24,8 +24,8 @@ public class CloudForestTest {
 
     @Before
     public void before(){
-        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Wilma", 4);
-        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Sid", 6);
+        ankylosaurus = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Wilma");
+        gallimimus = new Gallimimus(FeedType.OMNIVORE, "Gallimimus", "Sid");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(ankylosaurus);
         dinosaurList.add(gallimimus);
@@ -44,12 +44,8 @@ public class CloudForestTest {
     }
 
     @Test
-    public void boundaryHealthCannotGoBelowZero(){
-        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Monty", 8);
-        cloudForest.dinosaurHitBoundary(ankylosaurus2);
-        cloudForest.dinosaurHitBoundary(ankylosaurus2);
-        cloudForest.dinosaurHitBoundary(ankylosaurus2);
-        assertEquals(0, cloudForest.getBoundaryHealth());
+    public void canSetBoundaryHealth(){
+        assertEquals(40, cloudForest.setBoundaryHealth(40));
     }
 
     @Test
@@ -83,7 +79,7 @@ public class CloudForestTest {
     public void cannotTransferCarnivore(){
         ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
         ThunderValley  thunderValley = new ThunderValley(PaddockType.THUNDERVALLEY, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws", 5);
+        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
 
         cloudForest.transferHerbivore(tRex, thunderValley);
         assertEquals(2, cloudForest.dinosaurCount());
@@ -94,25 +90,6 @@ public class CloudForestTest {
     public void canFeedDinosaur(){
         assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
         assertEquals(1, gallimimus.getHungerLevel());
-    }
-
-    @Test
-    public void dinosaurCanRampage(){
-        cloudForest.dinosaurHitBoundary(gallimimus);
-        assertEquals(80, cloudForest.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        Ankylosaurus ankylosaurus2 = new Ankylosaurus(FeedType.HERBIVORE, "Ankylosaurus", "Lucy", 8);
-        assertEquals("Run for your lives!!", cloudForest.dinosaurEscapes(ankylosaurus2));
-        assertEquals(0, cloudForest.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        cloudForest.dinosaurEscapes(ankylosaurus);
-        assertEquals(100, cloudForest.getBoundaryHealth());
     }
 
 

@@ -101,15 +101,4 @@ public class ParkTest {
         assertEquals(1, park.visitorCount());
     }
 
-    @Test
-    public void canRepairPaddockBoundary(){
-        Pteranodon pteranodon = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Hedwig", 9);
-        ArrayList<IFly> dinosaurs = new ArrayList<>();
-        Aviary aviary = new Aviary(PaddockType.AVIARY, dinosaurs);
-        aviary.dinosaurHitBoundary(pteranodon);
-        assertEquals(50, aviary.getBoundaryHealth());
-        park.repairPaddock(aviary);
-        assertEquals(100, aviary.getBoundaryHealth());
-        assertEquals(-50, park.totalRevenue(), 0.1);
-    }
 }

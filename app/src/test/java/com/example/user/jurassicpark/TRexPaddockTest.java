@@ -19,7 +19,7 @@ public class TRexPaddockTest {
 
     @Before
     public void before(){
-        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Bruce", 3);
+        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Bruce");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(tRex);
 
@@ -34,6 +34,11 @@ public class TRexPaddockTest {
     @Test
     public void canGetBoundaryHealth(){
         assertEquals(100, tRexPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void canSetBoundaryHealth(){
+        assertEquals(40, tRexPaddock.setBoundaryHealth(40));
     }
 
     @Test
@@ -57,25 +62,5 @@ public class TRexPaddockTest {
     public void canFeedDinosaur(){
         assertEquals("Mmmm", tRexPaddock.feedDinosaur(tRex));
         assertEquals(1, tRex.getHungerLevel());
-    }
-
-    @Test
-    public void dinosaurCanRampage(){
-        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Arty", 7);
-        tRexPaddock.dinosaurHitBoundary(tRex2);
-        assertEquals(40, tRexPaddock.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Arty", 7);
-        assertEquals("Run for your lives!!", tRexPaddock.dinosaurEscapes(tRex2));
-        assertEquals(0, tRexPaddock.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        tRexPaddock.dinosaurEscapes(tRex);
-        assertEquals(100, tRexPaddock.getBoundaryHealth());
     }
 }

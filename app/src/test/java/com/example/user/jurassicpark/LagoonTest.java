@@ -20,7 +20,7 @@ public class LagoonTest {
 
     @Before
     public void before(){
-        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon", 2);
+        mosasaurus = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Simon");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(mosasaurus);
 
@@ -35,6 +35,11 @@ public class LagoonTest {
     @Test
     public void canGetBoundaryHealth(){
         assertEquals(100, lagoon.getBoundaryHealth());
+    }
+
+    @Test
+    public void canSetBoundaryHealth(){
+        assertEquals(40, lagoon.setBoundaryHealth(40));
     }
 
     @Test
@@ -59,26 +64,5 @@ public class LagoonTest {
         assertEquals("Mmmm", lagoon.feedDinosaur(mosasaurus));
         assertEquals(1, mosasaurus.getHungerLevel());
     }
-
-    @Test
-    public void dinosaurCanRampage(){
-        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Mark", 8);
-        lagoon.dinosaurHitBoundary(mosasaurus2);
-        assertEquals(80, lagoon.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        Mosasaurus mosasaurus2 = new Mosasaurus(FeedType.CARNIVORE, "Mosasaurus", "Mark", 8);
-        assertEquals("Run for your lives!!", lagoon.dinosaurEscapes(mosasaurus2));
-        assertEquals(0, lagoon.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        lagoon.dinosaurEscapes(mosasaurus);
-        assertEquals(100, lagoon.getBoundaryHealth());
-    }
-
 
 }

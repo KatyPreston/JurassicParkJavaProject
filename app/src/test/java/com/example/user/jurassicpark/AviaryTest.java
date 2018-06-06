@@ -20,7 +20,7 @@ public class AviaryTest {
 
     @Before
     public void before(){
-        pteranodon = new Pteranodon(FeedType.CARNIVORE, "Pteranodon", "Sylvester", 2);
+        pteranodon = new Pteranodon(FeedType.CARNIVORE, "Pteranodon", "Sylvester");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(pteranodon);
 
@@ -35,6 +35,11 @@ public class AviaryTest {
     @Test
     public void canGetBoundaryHealth(){
         assertEquals(100, aviary.getBoundaryHealth());
+    }
+
+    @Test
+    public void canSetBoundaryHealth(){
+        assertEquals(40, aviary.setBoundaryHealth(40));
     }
 
     @Test
@@ -59,26 +64,5 @@ public class AviaryTest {
         assertEquals("Mmmm", aviary.feedDinosaur(pteranodon));
         assertEquals(1, pteranodon.getHungerLevel());
     }
-
-    @Test
-    public void dinosaurCanRampage(){
-        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Wings", 6);
-        aviary.dinosaurHitBoundary(pteranodon2);
-        assertEquals(50, aviary.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        Pteranodon pteranodon2 = new Pteranodon(FeedType.HERBIVORE, "Pteranodon", "Bonkers", 8);
-        assertEquals("Run for your lives!!", aviary.dinosaurEscapes(pteranodon2));
-        assertEquals(0, aviary.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        aviary.dinosaurEscapes(pteranodon);
-        assertEquals(100, aviary.getBoundaryHealth());
-    }
-
 
 }

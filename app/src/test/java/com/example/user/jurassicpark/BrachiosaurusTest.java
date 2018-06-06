@@ -18,7 +18,7 @@ public class BrachiosaurusTest {
 
     @Before
     public void before(){
-        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "George", 1);
+        brachiosaurus = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "George");
     }
 
     @Test
@@ -37,11 +37,6 @@ public class BrachiosaurusTest {
     }
 
     @Test
-    public void canGetHungerLevel(){
-        assertEquals(1, brachiosaurus.getHungerLevel());
-    }
-
-    @Test
     public void canGetRampagePower(){
         assertEquals(70, brachiosaurus.getRampagePower());
     }
@@ -52,14 +47,4 @@ public class BrachiosaurusTest {
         assertEquals(1, brachiosaurus.getHungerLevel());
     }
 
-    @Test
-    public void canRampage(){
-        Brachiosaurus brachiosaurus2 = new Brachiosaurus(FeedType.HERBIVORE, "Brachiosaurus", "Sean", 6);
-        assertEquals(true, brachiosaurus2.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry() {
-        assertEquals(false, brachiosaurus.rampage());
-    }
 }

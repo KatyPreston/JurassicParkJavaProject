@@ -21,7 +21,7 @@ public class TRexTest {
 
     @Before
     public void before(){
-        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Grumpy", 8);
+        tRex = new TRex(FeedType.CARNIVORE, "TRex", "Grumpy");
     }
 
     @Test
@@ -40,11 +40,6 @@ public class TRexTest {
     }
 
     @Test
-    public void canGetHungerLevel(){
-        assertEquals(8, tRex.getHungerLevel());
-    }
-
-    @Test
     public void canGetRampagePower(){
         assertEquals(60, tRex.getRampagePower());
     }
@@ -55,16 +50,6 @@ public class TRexTest {
         assertEquals(1, tRex.getHungerLevel());
     }
 
-    @Test
-    public void canRampage(){
-        assertEquals(true, tRex.rampage());
-    }
-
-    @Test
-    public void willNotRampageUnlessHungry(){
-        TRex tRex2 = new TRex(FeedType.CARNIVORE, "TRex", "Spikes", 3);
-        assertEquals(false, tRex2.rampage());
-    }
 
 
 }

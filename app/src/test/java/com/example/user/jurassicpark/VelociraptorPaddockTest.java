@@ -19,7 +19,7 @@ public class VelociraptorPaddockTest {
 
     @Before
     public void before(){
-        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Pinky", 4);
+        velociraptor = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Pinky");
         dinosaurList = new ArrayList<>();
         dinosaurList.add(velociraptor);
 
@@ -34,6 +34,11 @@ public class VelociraptorPaddockTest {
     @Test
     public void canGetBoundaryHealth(){
         assertEquals(100, velociraptorPaddock.getBoundaryHealth());
+    }
+
+    @Test
+    public void canSetBoundaryHealth(){
+        assertEquals(40, velociraptorPaddock.setBoundaryHealth(40));
     }
 
     @Test
@@ -59,23 +64,4 @@ public class VelociraptorPaddockTest {
         assertEquals(1, velociraptor.getHungerLevel());
     }
 
-    @Test
-    public void dinosaurCanRampage(){
-        Velociraptor velociraptor2 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Yellow", 9);
-        velociraptorPaddock.dinosaurHitBoundary(velociraptor2);
-        assertEquals(70, velociraptorPaddock.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCanEscape(){
-        Velociraptor velociraptor2 = new Velociraptor(FeedType.CARNIVORE, "Velociraptor", "Yellow", 9);
-        assertEquals("Run for your lives!!", velociraptorPaddock.dinosaurEscapes(velociraptor2));
-        assertEquals(0, velociraptorPaddock.getBoundaryHealth());
-    }
-
-    @Test
-    public void dinosaurCannotEscapeUnlessRampaging(){
-        velociraptorPaddock.dinosaurEscapes(velociraptor);
-        assertEquals(100, velociraptorPaddock.getBoundaryHealth());
-    }
 }
