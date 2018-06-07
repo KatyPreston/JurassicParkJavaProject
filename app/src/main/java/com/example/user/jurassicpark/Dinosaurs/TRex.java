@@ -1,8 +1,7 @@
 package com.example.user.jurassicpark.Dinosaurs;
 
-import com.example.user.jurassicpark.DinosaurBehaviour.IWalk;
 
-public class TRex extends Dinosaur implements IWalk{
+public class TRex extends Dinosaur {
     private int rampagePower;
 
     public TRex(FeedType feedType, String type, String name){

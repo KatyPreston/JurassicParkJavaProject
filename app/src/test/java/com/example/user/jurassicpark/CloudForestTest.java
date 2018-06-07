@@ -77,17 +77,6 @@ public class CloudForestTest {
     }
 
     @Test
-    public void cannotTransferCarnivore(){
-        ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
-        ThunderValley  thunderValley = new ThunderValley(PaddockType.THUNDERVALLEY, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
-
-        cloudForest.transferHerbivore(tRex, thunderValley);
-        assertEquals(2, cloudForest.dinosaurCount());
-        assertEquals(0, thunderValley.dinosaurCount());
-    }
-
-    @Test
     public void canFeedDinosaur(){
         assertEquals("Mmmm", cloudForest.feedDinosaur(gallimimus));
         assertEquals(1, gallimimus.getHungerLevel());

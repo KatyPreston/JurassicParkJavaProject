@@ -72,16 +72,7 @@ public class ThunderValleyTest {
         assertEquals(0, thunderValley.dinosaurCount());
     }
 
-    @Test
-    public void cannotTransferCarnivore(){
-        ArrayList<IWalk> dinosaurlist2 = new ArrayList<>();
-        CloudForest  cloudForest = new CloudForest(PaddockType.CLOUDFOREST, dinosaurlist2);
-        TRex tRex = new TRex(FeedType.CARNIVORE, "Trex", "Mr Claws");
 
-        thunderValley.transferHerbivore(tRex, cloudForest);
-        assertEquals(1, thunderValley.dinosaurCount());
-        assertEquals(0, cloudForest.dinosaurCount());
-    }
 
     @Test
     public void canFeedDinosaur(){
