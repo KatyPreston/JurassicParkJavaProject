@@ -1,5 +1,5 @@
 # JurassicParkJavaProject
-Java project Jurassic Park (Week 9 CodeClan course)
+Java project Jurassic Park(Week 9 CodeClan course):
 A Jurassic Park themed management system where the user can manage the dinosaur population and visitor tracking of the park.
 
 Java project:
